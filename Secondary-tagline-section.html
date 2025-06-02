@@ -1,0 +1,151 @@
+<!-- === 1031 Capital Solutions – Fully Transparent with Pure CSS Animation === -->
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+<style>
+#cs-section {
+  --gold: #a48d29;
+  --gold-light: #c6a664;
+  --navy: #002B45;
+  --hd: 'Playfair Display', serif;
+  --bd: 'Inter', Arial, sans-serif;
+
+  font-family: var(--bd);
+  text-align: center;
+  background: transparent;
+  padding: clamp(2rem, 5vw, 4rem) 1rem;
+}
+
+#cs-section .panel {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem);
+  border: 1px solid var(--gold);
+  border-radius: 1.25rem;
+  background-color: transparent;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+#cs-section h2 {
+  font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.2 var(--hd);
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+}
+
+#cs-section p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+#cs-section .icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+#cs-section .icon {
+  flex: 0 1 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+#cs-section .icon:nth-child(1) { animation-delay: 0.3s; }
+#cs-section .icon:nth-child(2) { animation-delay: 0.45s; }
+#cs-section .icon:nth-child(3) { animation-delay: 0.6s; }
+#cs-section .icon:nth-child(4) { animation-delay: 0.75s; }
+#cs-section .icon:nth-child(5) { animation-delay: 0.9s; }
+
+#cs-section .icon i {
+  font-size: 2.2rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+}
+#cs-section .icon:hover i {
+  transform: scale(1.12);
+}
+
+#cs-section .icon small {
+  font: 500 0.95rem var(--bd);
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+#cs-section .btn {
+  display: inline-block;
+  margin-top: 4.5rem;
+  padding: 1rem 2.5rem;
+  font: 700 1.1rem var(--bd);
+  color: var(--navy);
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2rem;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(164, 141, 41, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1.2s;
+}
+#cs-section .btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 28px rgba(164, 141, 41, 0.45);
+}
+
+@media (max-width: 540px) {
+  #cs-section .icon {
+    flex: 1 1 45%;
+  }
+
+  #cs-section .btn {
+    width: 100%;
+  }
+}
+
+/* === Pure CSS Keyframes === */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+</style>
+
+<section id="cs-section">
+  <div class="panel">
+    <h2>Retire from Real Estate, Keep Your Wealth Working</h2>
+    <p>
+      <strong style="color: #a48d29;">1031 Capital Solutions</strong> helps accredited investors retire from their investment property through financial planning, technology, and white glove customer service. Their Investment Advisor platform offers education, analysis, consultation and research, with a fiduciary duty to their clients. Through their brokerage platform, they provide a wide variety of vetted investment options including DSTs, REITs and other strategies designed to mitigate capital gains tax, as well as provide the potential for income, appreciation, and diversification.
+    </p>
+
+    <div class="icon-grid">
+      <div class="icon"><i class="bi bi-bank2"></i><small>1031 Exchanges & DSTs</small></div>
+      <div class="icon"><i class="bi bi-cash-coin"></i><small>Tax-Advantaged Strategies</small></div>
+      <div class="icon"><i class="bi bi-person-check"></i><small>Fiduciary Planning</small></div>
+      <div class="icon"><i class="bi bi-building"></i><small>Institutional Real Estate</small></div>
+      <div class="icon"><i class="bi bi-journal-bookmark"></i><small>Education & Research</small></div>
+    </div>
+
+    <a href="#contact" class="btn">Schedule Your Consultation</a>
+  </div>
+</section>
