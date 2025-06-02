@@ -1,0 +1,215 @@
+<style>
+  /* ─────────────────────────────────────────────────────────────────────
+     Import Inter font (only for this block)
+  ───────────────────────────────────────────────────────────────────── */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+  /* ─────────────────────────────────────────────────────────────────────
+     Scoped “How We Work” Styles 
+     (Removed the draw‐in line, enlarged circles, no wrapping, hover scale)
+  ───────────────────────────────────────────────────────────────────── */
+  #how-we-work {
+    padding: 16px 8px;
+    background-color: transparent;
+  }
+  #how-we-work .hw-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Heading */
+  #how-we-work h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #a48d29;
+    margin: 0 0 8px;
+  }
+  #how-we-work .hw-intro {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    color: #333333;
+  }
+
+  /* CTA Button */
+  #how-we-work .hw-button {
+    display: inline-block;
+    background-color: #a48d29;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.6rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  }
+  #how-we-work .hw-button:hover {
+    background-color: #8c741f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Steps Title */
+  #how-we-work .steps-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 24px;
+    color: #333333;
+  }
+
+  /* Timeline Container (no line) */
+  #how-we-work .timeline-wrapper {
+    position: relative;
+    margin: 0 auto;
+    overflow: visible; /* allow shadows */
+  }
+
+  /* Timeline Steps as Larger Circles */
+  #how-we-work .timeline {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;      /* prevent wrapping onto new lines */
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  #how-we-work .step {
+    flex: 0 0 160px;       /* fixed width so five fit in 1000px */
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border: 1.5px solid #c6a664;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    box-shadow:
+      8px 8px 20px rgba(0, 0, 0, 0.15),
+      -4px -4px 8px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;              /* start hidden for fade-in */
+    transform: translateY(20px);
+  }
+  /* Fade-in + bounce for circles */
+  #how-we-work .step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* On hover: scale to 1.1 */
+  #how-we-work .step:hover {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow:
+      12px 12px 24px rgba(0, 0, 0, 0.2),
+      -6px -6px 12px rgba(255, 255, 255, 0.7);
+  }
+  #how-we-work .step span {
+    font-size: 1.4rem;
+    color: #a48d29;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  #how-we-work .step p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #333333;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* Responsive adjustment: shrink circles to 120px on tablet */
+  @media (max-width: 768px) {
+    #how-we-work .timeline-wrapper {
+      overflow-x: auto;    /* allow horizontal scroll if needed */
+    }
+    #how-we-work .timeline {
+      padding-bottom: 8px;
+    }
+    #how-we-work .step {
+      flex: 0 0 120px;
+      width: 120px;
+      height: 120px;
+      padding: 6px;
+    }
+    #how-we-work .step span {
+      font-size: 1.2rem;
+    }
+    #how-we-work .step p {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<div id="how-we-work">
+  <div class="hw-container">
+    <h2>How We Work</h2>
+    <p class="hw-intro">
+      We partner with real estate investment companies to offer qualified 1031 exchange  
+      replacement properties for your investment portfolio.
+    </p>
+
+    <!-- “Schedule a Call” button: update href to your actual link -->
+    <a href="#"
+       class="hw-button fade-in">
+      SCHEDULE A CALL
+    </a>
+
+    <h3 class="steps-title">Our Process</h3>
+    <div class="timeline-wrapper">
+      <div class="timeline">
+        <div class="step fade-in">
+          <span>1.</span>
+          <p>We analyze your rental property</p>
+        </div>
+        <div class="step fade-in">
+          <span>2.</span>
+          <p>You list your property for sale</p>
+        </div>
+        <div class="step fade-in">
+          <span>3.</span>
+          <p>We consult with you on replacement options</p>
+        </div>
+        <div class="step fade-in">
+          <span>4.</span>
+          <p>Your 1031 equity goes to a Qualified Intermediary</p>
+        </div>
+        <div class="step fade-in">
+          <span>5.</span>
+          <p>We invest your 1031 equity in a custom portfolio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ─────────────────────────────────────────────────────────────────────
+     Fade-In-On-Scroll with IntersectionObserver
+  ───────────────────────────────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('#how-we-work .fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+    items.forEach(el => observer.observe(el));
+  });
+</script>
