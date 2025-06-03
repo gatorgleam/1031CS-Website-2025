@@ -5,129 +5,170 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
 <style>
-#cs-section {
-  --gold: #a48d29;
-  --gold-light: #c6a664;
-  --navy: #002B45;
-  --hd: 'Playfair Display', serif;
-  --bd: 'Inter', Arial, sans-serif;
+  /* Remove any extra spacing around the section */
+  #cs-section {
+    margin: 0;
+    padding: 0;
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
 
-  font-family: var(--bd);
-  text-align: center;
-  background: transparent;
-  padding: clamp(2rem, 5vw, 4rem) 1rem;
-}
+  @media (max-width: 540px) {
+    /* Slightly less reduction on mobile for readability */
+    #cs-section {
+      transform: scale(0.9);
+      transform-origin: top center;
+    }
+  }
 
-#cs-section .panel {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem);
-  border: 1px solid var(--gold);
-  border-radius: 1.25rem;
-  background-color: transparent;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 0.3s;
-}
+  #cs-section {
+    --gold: #a48d29;
+    --gold-light: #c6a664;
+    --navy: #002B45;
+    --hd: 'Playfair Display', serif;
+    --bd: 'Inter', Arial, sans-serif;
 
-#cs-section h2 {
-  font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.2 var(--hd);
-  color: var(--navy);
-  margin-bottom: 1.2rem;
-}
+    font-family: var(--bd);
+    text-align: center;
+    background: transparent;
+  }
 
-#cs-section p {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.6;
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
+  #cs-section .panel {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    border: 1px solid var(--gold);
+    border-radius: 1.25rem;
+    background-color: transparent;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+  }
 
-#cs-section .icon-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
+  #cs-section h2 {
+    font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.2 var(--hd);
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
 
-#cs-section .icon {
-  flex: 0 1 150px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-#cs-section .icon:nth-child(1) { animation-delay: 0.3s; }
-#cs-section .icon:nth-child(2) { animation-delay: 0.45s; }
-#cs-section .icon:nth-child(3) { animation-delay: 0.6s; }
-#cs-section .icon:nth-child(4) { animation-delay: 0.75s; }
-#cs-section .icon:nth-child(5) { animation-delay: 0.9s; }
+  #cs-section p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
 
-#cs-section .icon i {
-  font-size: 2.2rem;
-  color: var(--gold);
-  transition: transform 0.3s;
-}
-#cs-section .icon:hover i {
-  transform: scale(1.12);
-}
+  /* Default (desktop/tablet): single row icons */
+  #cs-section .icon-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+    /* No overflow, icons already small */
+  }
 
-#cs-section .icon small {
-  font: 500 0.95rem var(--bd);
-  margin-top: 0.5rem;
-  color: #333;
-}
-
-#cs-section .btn {
-  display: inline-block;
-  margin-top: 4.5rem;
-  padding: 1rem 2.5rem;
-  font: 700 1.1rem var(--bd);
-  color: var(--navy);
-  background: linear-gradient(90deg, var(--gold), var(--gold-light));
-  border-radius: 2rem;
-  text-decoration: none;
-  box-shadow: 0 4px 18px rgba(164, 141, 41, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 1.2s;
-}
-#cs-section .btn:hover {
-  transform: scale(1.06);
-  box-shadow: 0 10px 28px rgba(164, 141, 41, 0.45);
-}
-
-@media (max-width: 540px) {
+  /* Icons: smaller flex-basis and reduced text sizes */
   #cs-section .icon {
-    flex: 1 1 45%;
+    flex: 1 1 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  #cs-section .icon:nth-child(1) { animation-delay: 0.3s; }
+  #cs-section .icon:nth-child(2) { animation-delay: 0.45s; }
+  #cs-section .icon:nth-child(3) { animation-delay: 0.6s; }
+  #cs-section .icon:nth-child(4) { animation-delay: 0.75s; }
+  #cs-section .icon:nth-child(5) { animation-delay: 0.9s; }
+
+  /* Reduce icon font size */
+  #cs-section .icon i {
+    font-size: 1.25rem;
+    color: var(--gold);
+    transition: transform 0.3s;
+  }
+  #cs-section .icon:hover i {
+    transform: scale(1.12);
+  }
+
+  /* Reduce small text size */
+  #cs-section .icon small {
+    font: 500 0.75rem var(--bd);
+    margin-top: 0.25rem;
+    color: #333;
+    line-height: 1.2;
   }
 
   #cs-section .btn {
-    width: 100%;
+    display: inline-block;
+    margin-top: 4rem;
+    padding: 0.75rem 2rem;
+    font: 700 1rem var(--bd);
+    color: #ffffff;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(164, 141, 41, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.2s;
   }
-}
+  #cs-section .btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 10px 28px rgba(164, 141, 41, 0.45);
+  }
 
-/* === Keyframes for Animation === */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  @media (max-width: 540px) {
+    /* Make icon grid wrap into 2 rows: 3 items first row, 2 items centered below */
+    #cs-section .icon-grid {
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    /* Each icon takes ~30% width to fit 3 per row */
+    #cs-section .icon {
+      flex: 1 1 30%;
+      margin-bottom: 1rem;
+    }
+
+    /* Ensure panel has bottom padding so the button isn’t cut off */
+    #cs-section .panel {
+      padding-bottom: 3rem;
+    }
+
+    /* Center button full width */
+    #cs-section .btn {
+      display: block;
+      width: 80%;
+      max-width: 200px;
+      margin: 2rem auto 0;
+      padding: 0.5rem 1rem;
+      font: 700 0.9rem var(--bd);
+    }
   }
-}
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+
+  /* === Keyframes for Animation === */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 </style>
 
 <section id="cs-section">
@@ -138,14 +179,36 @@
     </p>
 
     <div class="icon-grid">
-      <div class="icon"><i class="bi bi-bank2"></i><small>1031 Exchanges & DSTs</small></div>
-      <div class="icon"><i class="bi bi-cash-coin"></i><small>Tax-Advantaged Strategies</small></div>
-      <div class="icon"><i class="bi bi-person-check"></i><small>Fiduciary Planning</small></div>
-      <div class="icon"><i class="bi bi-building"></i><small>Institutional Real Estate</small></div>
-      <div class="icon"><i class="bi bi-journal-bookmark"></i><small>Education & Research</small></div>
+      <div class="icon">
+        <i class="bi bi-bank2"></i>
+        <small>1031 Exchanges & DSTs</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-cash-coin"></i>
+        <small>Tax-Advantaged Strategies</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-person-check"></i>
+        <small>Fiduciary Planning</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-building"></i>
+        <small>Institutional Real Estate</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-journal-bookmark"></i>
+        <small>Education & Research</small>
+      </div>
     </div>
 
-    <a href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.11bbd713f05afc97c8b4e369bc8fd920.1745601743051.1745863304918.1745873480374.7&__hssc=107973853.6.1745873480374&__hsfp=3026706836&uuid=e048b2b8-f065-4afe-95fc-934f43aada91" target="_blank" class="btn">Schedule Your Consultation</a>
+    <a
+      href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.11bbd713f05afc97c8b4e369bc8fd920.1745601743051.1745863304918.1745873480374.7&__hssc=107973853.6.1745873480374&__hsfp=3026706836&uuid=e048b2b8-f065-4afe-95fc-934f43aada91"
+      target="_blank"
+      class="btn"
+    >
+      Schedule Your Consultation
+    </a>
   </div>
 </section>
+
 
