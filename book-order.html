@@ -1,0 +1,169 @@
+<!-- =========================
+     BOOK ORDER SECTION START
+     ========================= -->
+<section id="book-order">
+  <div class="bo-inner">
+    <!-- Only the content card remains -->
+    <div class="bo-content">
+      <h2 class="bo-title">How to Retire from Being a Landlord</h2>
+      <div class="bo-underline"></div>
+      <p class="bo-desc">
+        If you are looking for the potential to improve your income and diversify into institutionally-operated real estate across multiple sectors and markets, this book is a must-read.
+      </p>
+      <p class="bo-desc">
+        In <em>How to Retire from Being a Landlord</em>, property owners will learn how to exchange their exhausting and often under-performing rental properties for passive real estate investments, while deferring or even avoiding capital-gains taxes.
+      </p>
+      <a href="#" class="bo-btn">Order Your Copy</a>
+    </div>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap');
+
+    /* Remove Squarespace code block padding/margin */
+    .sqs-block-code {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Section wrapper */
+    #book-order {
+      background: transparent;
+      padding: 2rem 1rem;
+    }
+
+    /* Center the card on desktop */
+    .bo-inner {
+      display: flex;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* Content card */
+    .bo-content {
+      background: #FFFFFF;
+      border-radius: 1rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: #002B45;
+      width: 100%;
+    }
+
+    /* Title always left-aligned */
+    .bo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+      line-height: 1.2;
+      text-align: left;
+      max-width: 100%;
+      color: #002B45;
+    }
+
+    .bo-underline {
+      width: 5rem;
+      height: 4px;
+      background: #C6A664;
+      border-radius: 2px;
+      margin-top: -0.5rem;
+    }
+
+    /* Base styling for body text (desktop override will modify) */
+    .bo-desc {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 auto;
+      text-align: center;
+      max-width: 90%;
+      color: #002B45;
+    }
+
+    /* Centered button by default */
+    .bo-btn {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1rem;
+      background: #002B45;
+      color: #FFFFFF;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease, transform 0.2s ease;
+      align-self: center;
+      margin-top: 1rem;
+    }
+
+    .bo-btn:hover {
+      background: #C6A664;
+      color: #002B45;
+      transform: translateY(-2px);
+    }
+
+    /* ───── Desktop-only override (min-width: 768px) ───── */
+    @media (min-width: 768px) {
+      /* Push paragraphs to the right (leaving white space on left) */
+      .bo-desc {
+        max-width: 60%;         /* only use 60% of card’s width */
+        margin: 0 0 0 auto;     /* auto left margin pushes it right */
+        text-align: left;       /* keep text left-aligned within its block */
+      }
+
+      /* Button stays centered on desktop */
+      .bo-btn {
+        align-self: center;
+      }
+    }
+
+    /* ───── Mobile: cap title at 80% width, center body & button ───── */
+    @media (max-width: 767px) {
+      #book-order {
+        padding: 1.5rem 1rem;
+      }
+
+      .bo-inner {
+        padding: 0;
+      }
+
+      .bo-content {
+        padding: 2rem 1.5rem;
+        text-align: left; /* only title remains left-aligned */
+      }
+
+      /* Title capped at 80% to leave extra whitespace on right */
+      .bo-title {
+        font-size: 2rem;
+        max-width: 80%;
+        margin: 0;
+      }
+
+      .bo-underline {
+        margin: 0 0 1rem 0;
+      }
+
+      /* Restore centered body text on mobile */
+      .bo-desc {
+        font-size: 0.95rem;
+        max-width: 85%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* Center button on mobile */
+      .bo-btn {
+        width: 100%;
+        max-width: 240px;
+        align-self: center;
+      }
+    }
+  </style>
+</section>
+<!-- =======================
+     BOOK ORDER SECTION END
+     ======================= -->
