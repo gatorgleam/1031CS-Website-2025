@@ -1,215 +1,296 @@
+<section id="how-we-work">
+  <!-- Section Title -->
+  <h2>How We Work</h2>
+
+  <!-- Introductory Text -->
+  <p class="how-we-partner">
+    We partner with real estate investment companies to offer qualified 1031 exchange replacement properties for your investment portfolio. Here are some of the benefits:
+  </p>
+
+  <!-- Call to Action (under text, above boxes) -->
+  <div class="hw-cta-wrapper">
+    <a href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.62b9aa5da72381aeebc788df85625a4f.1748375479813.1748897912837.1748902256566.17&__hssc=107973853.2.1748902256566&__hsfp=1568139861&uuid=72ff76f7-7883-4f6a-ae67-2101ea22ddee"
+       class="hw-cta">See How We Can Help</a>
+  </div>
+
+  <!-- Cards Container (all in one row) -->
+  <div class="hw-container">
+    <!-- Step 1 Card -->
+    <article class="hw-card">
+      <div class="hw-icon" aria-label="Step 1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/>
+        </svg>
+      </div>
+      <h3>Step 1: We analyze your rental property</h3>
+    </article>
+
+    <!-- Step 2 Card -->
+    <article class="hw-card">
+      <div class="hw-icon" aria-label="Step 2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 9.75L12 4l9 5.75V19a2 2 0 01-2 2H5a2 2 0 01-2-2V9.75z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 22V12h6v10"/>
+        </svg>
+      </div>
+      <h3>Step 2: You list your property for sale</h3>
+    </article>
+
+    <!-- Step 3 Card -->
+    <article class="hw-card">
+      <div class="hw-icon" aria-label="Step 3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 10h8M8 14h8"/>
+          <rect x="3" y="3" width="18" height="14" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 17v3l4-3"/>
+        </svg>
+      </div>
+      <h3>Step 3: We consult with you on replacement options</h3>
+    </article>
+
+    <!-- Step 4 Card -->
+    <article class="hw-card">
+      <div class="hw-icon" aria-label="Step 4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 7V5a3 3 0 013-3h2a3 3 0 013 3v2M4 7h16v11a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"/>
+        </svg>
+      </div>
+      <h3>Step 4: Your 1031 equity goes to a Qualified Intermediary</h3>
+    </article>
+
+    <!-- Step 5 Card -->
+    <article class="hw-card">
+      <div class="hw-icon" aria-label="Step 5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 3v18h18"/>
+          <rect x="7" y="9" width="2" height="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="11" y="5" width="2" height="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="15" y="13" width="2" height="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Step 5: We invest your 1031 equity in a custom portfolio</h3>
+    </article>
+  </div>
+</section>
+
 <style>
-  /* ─────────────────────────────────────────────────────────────────────
-     Import Inter font (only for this block)
-  ───────────────────────────────────────────────────────────────────── */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+  /* ==========================================================================
+     Squarespace Code Block Styles for “How We Work”
+     ========================================================================== */
 
-  /* ─────────────────────────────────────────────────────────────────────
-     Scoped “How We Work” Styles 
-     (Removed the draw‐in line, enlarged circles, no wrapping, hover scale)
-  ───────────────────────────────────────────────────────────────────── */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap');
+
+  /* Root Variables */
   #how-we-work {
-    padding: 16px 8px;
-    background-color: transparent;
-  }
-  #how-we-work .hw-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+    --blue: #002B45 !important;
+    --light-blue: #003558 !important;
+    --gold: #A48D29 !important;
+    --white: #FFFFFF !important;
   }
 
-  /* Heading */
+  /* Section Base */
+  #how-we-work {
+    background-color: transparent !important;
+    color: var(--white) !important;
+    text-align: center !important;
+    padding: 80px 20px !important;
+  }
   #how-we-work h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #a48d29;
-    margin: 0 0 8px;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3rem !important;
+    margin-bottom: 16px !important;
   }
-  #how-we-work .hw-intro {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.4;
-    max-width: 700px;
-    margin: 0 auto 1rem;
-    color: #333333;
+  #how-we-work .how-we-partner {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+    max-width: 800px !important;
+    margin: 0 auto 40px !important;
+    color: var(--white) !important;
+    padding: 0 10px !important;
   }
 
-  /* CTA Button */
-  #how-we-work .hw-button {
-    display: inline-block;
-    background-color: #a48d29;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.6rem 1.6rem;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  /* CTA Under Text */
+  #how-we-work .hw-cta-wrapper {
+    margin-bottom: 40px !important;
   }
-  #how-we-work .hw-button:hover {
-    background-color: #8c741f;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  #how-we-work .hw-cta {
+    display: inline-block !important;
+    background-color: var(--gold) !important;
+    color: var(--blue) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 1.25rem !important;
+    padding: 1rem 2.5rem !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
   }
-
-  /* Steps Title */
-  #how-we-work .steps-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin: 0 0 24px;
-    color: #333333;
+  #how-we-work .hw-cta:hover {
+    background-color: #927b20 !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
   }
 
-  /* Timeline Container (no line) */
-  #how-we-work .timeline-wrapper {
-    position: relative;
-    margin: 0 auto;
-    overflow: visible; /* allow shadows */
+  /* Cards Container: one row on desktop */
+  #how-we-work .hw-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    flex-wrap: nowrap !important;
   }
 
-  /* Timeline Steps as Larger Circles */
-  #how-we-work .timeline {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;      /* prevent wrapping onto new lines */
-    gap: 16px;
-    position: relative;
-    z-index: 2;
+  /* Individual Card */
+  #how-we-work .hw-card {
+    position: relative !important;
+    background-color: var(--white) !important;
+    border-radius: 12px !important;
+    padding: 30px 20px !important;           /* increased vertical padding */
+    min-height: 260px !important;             /* ensure taller boxes */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+    flex: 0 1 18% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;       /* center content vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    overflow: hidden !important;
   }
-  #how-we-work .step {
-    flex: 0 0 160px;       /* fixed width so five fit in 1000px */
-    width: 160px;
-    height: 160px;
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    border: 1.5px solid #c6a664;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 8px;
-    box-shadow:
-      8px 8px 20px rgba(0, 0, 0, 0.15),
-      -4px -4px 8px rgba(255, 255, 255, 0.7);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
-    opacity: 0;              /* start hidden for fade-in */
-    transform: translateY(20px);
+  #how-we-work .hw-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15) !important;
   }
-  /* Fade-in + bounce for circles */
-  #how-we-work .step.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  /* On hover: scale to 1.1 */
-  #how-we-work .step:hover {
-    transform: translateY(-6px) scale(1.1);
-    box-shadow:
-      12px 12px 24px rgba(0, 0, 0, 0.2),
-      -6px -6px 12px rgba(255, 255, 255, 0.7);
-  }
-  #how-we-work .step span {
-    font-size: 1.4rem;
-    color: #a48d29;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  #how-we-work .step p {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #333333;
-    margin: 0;
-    line-height: 1.2;
+  /* Diagonal accent stripe */
+  #how-we-work .hw-card::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -30px !important;
+    right: -30px !important;
+    width: 80px !important;
+    height: 80px !important;
+    background-color: var(--gold) !important;
+    transform: rotate(45deg) !important;
+    opacity: 0.2 !important;
   }
 
-  /* Responsive adjustment: shrink circles to 120px on tablet */
+  /* Icon */
+  #how-we-work .hw-icon {
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 auto 16px !important;
+    color: var(--gold) !important;
+    transition: transform 0.3s ease !important;
+  }
+  #how-we-work .hw-card:hover .hw-icon {
+    transform: rotate(15deg) scale(1.1) !important;
+  }
+  #how-we-work .hw-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Step Title */
+  #how-we-work h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.25rem !important;
+    margin: 0 !important;
+    color: var(--blue) !important;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    #how-we-work .hw-card {
+      flex: 0 1 20% !important;
+      padding: 28px 18px !important;   /* slightly larger padding on tablet */
+      min-height: 240px !important;     /* adjust height for tablet */
+    }
+    #how-we-work .hw-icon {
+      width: 50px !important;
+      height: 50px !important;
+      margin-bottom: 14px !important;
+    }
+    #how-we-work h3 {
+      font-size: 1.1rem !important;
+    }
+  }
+
   @media (max-width: 768px) {
-    #how-we-work .timeline-wrapper {
-      overflow-x: auto;    /* allow horizontal scroll if needed */
+    #how-we-work {
+      padding: 60px 16px !important;
     }
-    #how-we-work .timeline {
-      padding-bottom: 8px;
+    #how-we-work h2 {
+      font-size: 2.5rem !important;
     }
-    #how-we-work .step {
-      flex: 0 0 120px;
-      width: 120px;
-      height: 120px;
-      padding: 6px;
+    #how-we-work .how-we-partner {
+      font-size: 1.1rem !important;
+      margin-bottom: 30px !important;
     }
-    #how-we-work .step span {
-      font-size: 1.2rem;
+    #how-we-work .hw-cta {
+      font-size: 1.1rem !important;
+      padding: 0.9rem 2rem !important;
     }
-    #how-we-work .step p {
-      font-size: 0.85rem;
+    /* Wrap cards on tablet */
+    #how-we-work .hw-container {
+      flex-wrap: wrap !important;
+      gap: 20px !important;
+    }
+    #how-we-work .hw-card {
+      flex: 0 1 calc(50% - 10px) !important;
+      margin: 0 auto !important;
+      padding: 24px 16px !important;
+      min-height: 220px !important;
+    }
+    #how-we-work .hw-icon {
+      width: 48px !important;
+      height: 48px !important;
+      margin-bottom: 12px !important;
+    }
+    #how-we-work h3 {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #how-we-work {
+      padding: 40px 12px !important;
+    }
+    #how-we-work h2 {
+      font-size: 2rem !important;
+      margin-bottom: 12px !important;
+    }
+    #how-we-work .how-we-partner {
+      font-size: 1rem !important;
+      margin-bottom: 20px !important;
+    }
+    #how-we-work .hw-cta {
+      font-size: 1rem !important;
+      padding: 0.8rem 1.8rem !important;
+    }
+    /* Full width cards on mobile */
+    #how-we-work .hw-card {
+      flex: 0 1 100% !important;
+      max-width: 100% !important;
+      padding: 20px 14px !important;
+      min-height: 200px !important;
+    }
+    #how-we-work .hw-icon {
+      width: 40px !important;
+      height: 40px !important;
+      margin-bottom: 10px !important;
+    }
+    #how-we-work h3 {
+      font-size: 1rem !important;
     }
   }
 </style>
 
-<div id="how-we-work">
-  <div class="hw-container">
-    <h2>How We Work</h2>
-    <p class="hw-intro">
-      We partner with real estate investment companies to offer qualified 1031 exchange  
-      replacement properties for your investment portfolio.
-    </p>
-
-    <!-- “Schedule a Call” button: update href to your actual link -->
-    <a href="#"
-       class="hw-button fade-in">
-      SCHEDULE A CALL
-    </a>
-
-    <h3 class="steps-title">Our Process</h3>
-    <div class="timeline-wrapper">
-      <div class="timeline">
-        <div class="step fade-in">
-          <span>1.</span>
-          <p>We analyze your rental property</p>
-        </div>
-        <div class="step fade-in">
-          <span>2.</span>
-          <p>You list your property for sale</p>
-        </div>
-        <div class="step fade-in">
-          <span>3.</span>
-          <p>We consult with you on replacement options</p>
-        </div>
-        <div class="step fade-in">
-          <span>4.</span>
-          <p>Your 1031 equity goes to a Qualified Intermediary</p>
-        </div>
-        <div class="step fade-in">
-          <span>5.</span>
-          <p>We invest your 1031 equity in a custom portfolio</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  /* ─────────────────────────────────────────────────────────────────────
-     Fade-In-On-Scroll with IntersectionObserver
-  ───────────────────────────────────────────────────────────────────── */
-  document.addEventListener('DOMContentLoaded', function() {
-    const items = document.querySelectorAll('#how-we-work .fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-    items.forEach(el => observer.observe(el));
-  });
-</script>
