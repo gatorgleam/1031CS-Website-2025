@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisory Services</title>
+  <style>
+    /* 1. Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    /* 2. Color Variables */
+    :root {
+      --color-primary: #002B45;       /* Dark Navy */
+      --color-accent:  #C6A664;       /* Soft Gold */
+      --color-text:    #26344e;       /* Dark Slate */
+      --color-bg:      #ffffff;       /* Pure White */
+      --color-disclaimer: #b4953e;    /* Gold-tone for disclaimers */
+      --shadow-base:   rgba(0, 43, 69, 0.03); /* Light navy shadow */
+    }
+
+    /* 3. Global Reset & Base Typography */
+    html {
+      scroll-behavior: smooth;
+    }
+    body,
+    * {
+      font-family: 'Montserrat', Arial, sans-serif !important;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: var(--color-text);
+    }
+    a {
+      text-decoration: none;
+    }
+
+    /* 5. Section Card (Full-Width Background) */
+    .section-card {
+      width: 100%;
+      margin: 0;
+      background: var(--color-bg);
+      border-radius: 20px;
+      box-shadow: 0 2px 14px var(--shadow-base);
+      padding: 2.7rem 0 3rem;
+      scroll-margin-top: 86px;
+      text-align: center;
+    }
+    .section-card > * {
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 6. Typography: Titles & Headings */
+    .title-lg {
+      font-size: 2.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin-top: 0.1rem;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+    .accent-bar {
+      display: block;
+      height: 4px;
+      width: 64px;
+      background: var(--color-accent);
+      border-radius: 8px;
+      margin: 0 auto 2.2rem auto;
+    }
+    .heading-2 {
+      font-size: 1.19rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-primary);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* 7. Paragraphs & Lists */
+    .section-content p,
+    .section-content ul,
+    .section-content ol {
+      font-size: 1.01rem;
+      color: var(--color-text);
+      line-height: 1.75;
+      margin: 0.7em auto 1.1em auto;
+      text-align: center;
+    }
+    .section-content ul,
+    .section-content ol {
+      list-style: disc inside;
+      padding: 0;
+      margin: 0.5em auto 1.4em auto;
+    }
+    .section-content li {
+      margin-bottom: 0.6em;
+      text-align: center;
+    }
+
+    /* 8. Call-To-Action Button */
+    .btn-cta {
+      display: inline-block;
+      background: var(--color-accent);
+      color: var(--color-primary) !important;
+      font-size: 1.13rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      padding: 1.2em 2.5em;
+      margin: 2.2rem auto 1.2rem auto;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(198, 166, 100, 0.15);
+      width: 100%;
+      max-width: 420px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .btn-cta:hover,
+    .btn-cta:focus {
+      background: var(--color-primary);
+      color: var(--color-bg) !important;
+    }
+
+    /* 9. Disclaimer & Fine Print */
+    .disclaimer {
+      font-size: 0.93em;
+      background: none;
+      border-left: 4px solid var(--color-accent);
+      padding: 0.65em 1em;
+      margin: 1.6em auto 1.2em auto;
+      width: 100%;
+      max-width: 850px;
+      color: var(--color-disclaimer);
+      font-style: italic;
+      text-align: center;
+      opacity: 0.87;
+    }
+
+    /* 10. Service Grid & Hover Animations */
+    .service-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .service-box {
+      background: var(--color-primary);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px var(--shadow-base);
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-bg);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .service-box:hover {
+      transform: scale(1.25);
+      box-shadow:
+        0 0 16px var(--color-accent),
+        0 0 32px rgba(198, 166, 100, 0.5),
+        0 4px 24px var(--shadow-base);
+    }
+
+    /* 11. Responsive Adjustments */
+    @media (max-width: 700px) {
+      .section-card {
+        padding: 1.2rem 0 1.6rem;
+      }
+      .title-lg {
+        font-size: 1.19rem;
+      }
+      .heading-2 {
+        font-size: 0.97rem;
+      }
+      .section-content p,
+      .section-content ul,
+      .section-content ol {
+        font-size: 0.97rem;
+      }
+      .service-box {
+        width: 140px;
+        height: 140px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Advisory Services Section -->
+  <section class="section-card" id="advisory-services">
+    <h2 class="title-lg">Advisory Services</h2>
+    <span class="accent-bar"></span>
+    <div class="section-content">
+      <p>
+        We offer a comprehensive suite of advisory services designed to help you navigate complex financial and operational challenges. Our team of experts works closely with you to develop tailored strategies that drive long-term success.
+      </p>
+      <ul>
+        <li>Strategic Business Consultation</li>
+        <li>Financial Planning & Analysis</li>
+        <li>Mergers & Acquisitions Advisory</li>
+        <li>Risk Management & Compliance</li>
+      </ul>
+      <p>
+        Our approach is rooted in industry best practices and a deep understanding of market dynamics. We partner with you to identify opportunities, mitigate risks, and unlock value across every facet of your organization.
+      </p>
+    </div>
+    <a href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.62b9aa5da72381aeebc788df85625a4f.1748375479813.1748897912837.1748902256566.17&__hssc=107973853.2.1748902256566&__hsfp=1568139861&uuid=72ff76f7-7883-4f6a-ae67-2101ea22ddee" class="btn-cta">
+      Get in Touch
+    </a>
+  </section>
+
+  <!-- Our Comprehensive Services Section -->
+  <section class="section-card" id="comprehensive-services">
+    <h2 class="heading-2">Our Comprehensive Services</h2>
+    <div class="service-grid">
+      <div class="service-box">Asset Analysis</div>
+      <div class="service-box">Deal Structure &amp; Title Consulting</div>
+      <div class="service-box">Transaction Management</div>
+      <div class="service-box">Tax Mitigation Strategies</div>
+      <div class="service-box">Estate Planning</div>
+      <div class="service-box">Real Estate Investment Management</div>
+      <div class="service-box">Custom Analysis or Consultation as Needed</div>
+      <div class="service-box">Real Estate Investment Exit Planning</div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="section-card">
+    <div class="section-content">
+      <div class="disclaimer">
+        *1031 Capital Solutions and its representatives do not give tax or legal advice.
+      </div>
+    </div>
+  </section>
+</body>
+</html>
