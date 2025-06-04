@@ -1,21 +1,19 @@
-/* Button Style: add this to your CSS */
-.bo-btn {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  background: #002B45;
-  color: #FFFFFF;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
+<!-- Example 1: Native HTML button -->
+<button type="button">
+  Click Me
+</button>
 
-.bo-btn:hover {
-  /* Soft gold glow on hover, no color change */
-  box-shadow:
-    0 0 12px rgba(198, 166, 100, 0.7),
-    0 4px 16px rgba(198, 166, 100, 0.4);
-  transform: translateY(-2px);
-}
+<!-- Example 2: Input-based button -->
+<input type="button" value="Submit Form">
+
+<!-- Example 3: Anchor styled as a button (works in Squarespace Code Blocks) -->
+<a href="https://example.com/your-link" target="_blank" rel="noopener">
+  Learn More
+</a>
+
+<!-- Example 4: Squarespace “Button Block” markup (if you copy its HTML) -->
+<div class="sqs-block-button-container">
+  <a class="sqs-block-button-element--medium" href="https://example.com/your-link">
+    Book a Call
+  </a>
+</div>
