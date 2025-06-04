@@ -18,24 +18,25 @@
       --shadow-base:   rgba(0, 43, 69, 0.03); /* Light navy shadow */
     }
 
-    /* 3. Global Reset & Base Typography */
-    html {
-      scroll-behavior: smooth;
-    }
-    body,
-    * {
+    /* 3. Scope all rules under .custom-advisory-container */
+    .custom-advisory-container,
+    .custom-advisory-container * {
       font-family: 'Montserrat', Arial, sans-serif !important;
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
       color: var(--color-text);
     }
-    a {
+
+    /* 4. Base reset for elements inside the container */
+    .custom-advisory-container {
+      margin: 0;
+      padding: 0;
+    }
+    .custom-advisory-container a {
       text-decoration: none;
     }
 
     /* 5. Section Card (Full-Width Background) */
-    .section-card {
+    .custom-advisory-container .section-card {
       width: 100%;
       margin: 0;
       background: var(--color-bg);
@@ -45,14 +46,14 @@
       scroll-margin-top: 86px;
       text-align: center;
     }
-    .section-card > * {
+    .custom-advisory-container .section-card > * {
       max-width: 850px;
       margin-left: auto;
       margin-right: auto;
     }
 
     /* 6. Typography: Titles & Headings */
-    .title-lg {
+    .custom-advisory-container .title-lg {
       font-size: 2.05rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -62,7 +63,7 @@
       margin-bottom: 0.8rem;
       text-align: center;
     }
-    .accent-bar {
+    .custom-advisory-container .accent-bar {
       display: block;
       height: 4px;
       width: 64px;
@@ -70,7 +71,7 @@
       border-radius: 8px;
       margin: 0 auto 2.2rem auto;
     }
-    .heading-2 {
+    .custom-advisory-container .heading-2 {
       font-size: 1.19rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -82,28 +83,28 @@
     }
 
     /* 7. Paragraphs & Lists */
-    .section-content p,
-    .section-content ul,
-    .section-content ol {
+    .custom-advisory-container .section-content p,
+    .custom-advisory-container .section-content ul,
+    .custom-advisory-container .section-content ol {
       font-size: 1.01rem;
       color: var(--color-text);
       line-height: 1.75;
       margin: 0.7em auto 1.1em auto;
       text-align: center;
     }
-    .section-content ul,
-    .section-content ol {
+    .custom-advisory-container .section-content ul,
+    .custom-advisory-container .section-content ol {
       list-style: disc inside;
       padding: 0;
       margin: 0.5em auto 1.4em auto;
     }
-    .section-content li {
+    .custom-advisory-container .section-content li {
       margin-bottom: 0.6em;
       text-align: center;
     }
 
     /* 8. Call-To-Action Button */
-    .btn-cta {
+    .custom-advisory-container .btn-cta {
       display: inline-block;
       background: var(--color-accent);
       color: var(--color-primary) !important;
@@ -122,14 +123,14 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .btn-cta:hover,
-    .btn-cta:focus {
+    .custom-advisory-container .btn-cta:hover,
+    .custom-advisory-container .btn-cta:focus {
       background: var(--color-primary);
       color: var(--color-bg) !important;
     }
 
     /* 9. Disclaimer & Fine Print */
-    .disclaimer {
+    .custom-advisory-container .disclaimer {
       font-size: 0.93em;
       background: none;
       border-left: 4px solid var(--color-accent);
@@ -144,14 +145,14 @@
     }
 
     /* 10. Service Grid & Hover Animations */
-    .service-grid {
+    .custom-advisory-container .service-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
-    .service-box {
+    .custom-advisory-container .service-box {
       background: var(--color-primary);
       border-radius: 12px;
       box-shadow: 0 2px 8px var(--shadow-base);
@@ -167,7 +168,7 @@
       color: var(--color-bg);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    .service-box:hover {
+    .custom-advisory-container .service-box:hover {
       transform: scale(1.25);
       box-shadow:
         0 0 16px var(--color-accent),
@@ -177,21 +178,21 @@
 
     /* 11. Responsive Adjustments */
     @media (max-width: 700px) {
-      .section-card {
+      .custom-advisory-container .section-card {
         padding: 1.2rem 0 1.6rem;
       }
-      .title-lg {
+      .custom-advisory-container .title-lg {
         font-size: 1.19rem;
       }
-      .heading-2 {
+      .custom-advisory-container .heading-2 {
         font-size: 0.97rem;
       }
-      .section-content p,
-      .section-content ul,
-      .section-content ol {
+      .custom-advisory-container .section-content p,
+      .custom-advisory-container .section-content ul,
+      .custom-advisory-container .section-content ol {
         font-size: 0.97rem;
       }
-      .service-box {
+      .custom-advisory-container .service-box {
         width: 140px;
         height: 140px;
         font-size: 0.85rem;
@@ -200,51 +201,57 @@
   </style>
 </head>
 <body>
-  <!-- Advisory Services Section -->
-  <section class="section-card" id="advisory-services">
-    <h2 class="title-lg">Advisory Services</h2>
-    <span class="accent-bar"></span>
-    <div class="section-content">
-      <p>
-        We offer a comprehensive suite of advisory services designed to help you navigate complex financial and operational challenges. Our team of experts works closely with you to develop tailored strategies that drive long-term success.
-      </p>
-      <ul>
-        <li>Strategic Business Consultation</li>
-        <li>Financial Planning & Analysis</li>
-        <li>Mergers & Acquisitions Advisory</li>
-        <li>Risk Management & Compliance</li>
-      </ul>
-      <p>
-        Our approach is rooted in industry best practices and a deep understanding of market dynamics. We partner with you to identify opportunities, mitigate risks, and unlock value across every facet of your organization.
-      </p>
-    </div>
-    <a href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.62b9aa5da72381aeebc788df85625a4f.1748375479813.1748897912837.1748902256566.17&__hssc=107973853.2.1748902256566&__hsfp=1568139861&uuid=72ff76f7-7883-4f6a-ae67-2101ea22ddee" class="btn-cta">
-      Get in Touch
-    </a>
-  </section>
-
-  <!-- Our Comprehensive Services Section -->
-  <section class="section-card" id="comprehensive-services">
-    <h2 class="heading-2">Our Comprehensive Services</h2>
-    <div class="service-grid">
-      <div class="service-box">Asset Analysis</div>
-      <div class="service-box">Deal Structure &amp; Title Consulting</div>
-      <div class="service-box">Transaction Management</div>
-      <div class="service-box">Tax Mitigation Strategies</div>
-      <div class="service-box">Estate Planning</div>
-      <div class="service-box">Real Estate Investment Management</div>
-      <div class="service-box">Custom Analysis or Consultation as Needed</div>
-      <div class="service-box">Real Estate Investment Exit Planning</div>
-    </div>
-  </section>
-
-  <!-- Disclaimer -->
-  <section class="section-card">
-    <div class="section-content">
-      <div class="disclaimer">
-        *1031 Capital Solutions and its representatives do not give tax or legal advice.
+  <!-- Wrapping container to isolate styles -->
+  <div class="custom-advisory-container">
+    <!-- Advisory Services Section -->
+    <section class="section-card" id="advisory-services">
+      <h2 class="title-lg">Advisory Services</h2>
+      <span class="accent-bar"></span>
+      <div class="section-content">
+        <p>
+          We offer a comprehensive suite of advisory services designed to help you navigate complex financial and operational challenges. Our team of experts works closely with you to develop tailored strategies that drive long-term success.
+        </p>
+        <ul>
+          <li>Strategic Business Consultation</li>
+          <li>Financial Planning & Analysis</li>
+          <li>Mergers & Acquisitions Advisory</li>
+          <li>Risk Management & Compliance</li>
+        </ul>
+        <p>
+          Our approach is rooted in industry best practices and a deep understanding of market dynamics. We partner with you to identify opportunities, mitigate risks, and unlock value across every facet of your organization.
+        </p>
       </div>
-    </div>
-  </section>
+      <a
+        href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.62b9aa5da72381aeebc788df85625a4f.1748375479813.1748897912837.1748902256566.17&__hssc=107973853.2.1748902256566&__hsfp=1568139861&uuid=72ff76f7-7883-4f6a-ae67-2101ea22ddee"
+        class="btn-cta"
+      >
+        Get in Touch
+      </a>
+    </section>
+
+    <!-- Our Comprehensive Services Section -->
+    <section class="section-card" id="comprehensive-services">
+      <h2 class="heading-2">Our Comprehensive Services</h2>
+      <div class="service-grid">
+        <div class="service-box">Asset Analysis</div>
+        <div class="service-box">Deal Structure &amp; Title Consulting</div>
+        <div class="service-box">Transaction Management</div>
+        <div class="service-box">Tax Mitigation Strategies</div>
+        <div class="service-box">Estate Planning</div>
+        <div class="service-box">Real Estate Investment Management</div>
+        <div class="service-box">Custom Analysis or Consultation as Needed</div>
+        <div class="service-box">Real Estate Investment Exit Planning</div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section-card">
+      <div class="section-content">
+        <div class="disclaimer">
+          *1031 Capital Solutions and its representatives do not give tax or legal advice.
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
