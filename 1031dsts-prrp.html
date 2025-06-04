@@ -1,0 +1,470 @@
+<style>
+  /* Import Montserrat from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  /* Global Reset & Typography */
+  html {
+    scroll-behavior: smooth;
+  }
+  body, .dst-section * {
+    font-family: 'Montserrat', Arial, sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #26344e;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  /* NAVBAR (static, no movement) */
+  .dst-navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5vw;
+    padding: 1rem 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .dst-navbar a {
+    font-weight: 700;
+    color: #002B45;
+    font-size: 1.01rem;
+    padding: 0.45em 1.25em;
+    border-radius: 100px;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+    letter-spacing: 0.09em;
+  }
+  .dst-navbar a.active,
+  .dst-navbar a:hover,
+  .dst-navbar a:focus {
+    background: #C6A664;
+    color: #ffffff;
+  }
+
+  /* SECTION CARD (full-width background) */
+  .dst-section {
+    width: 100%;
+    margin: 0;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 14px rgba(0, 43, 69, 0.03);
+    padding: 2.7rem 0 3rem;
+    scroll-margin-top: 86px;
+    text-align: center; /* center all direct children by default */
+  }
+
+  /* Constrain inner text/elements to original 850px */
+  .dst-section > * {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* SECTION TITLE & ACCENT */
+  .dst-title {
+    font-size: 2.05rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #002B45;
+    margin-bottom: 0.8rem;
+    margin-top: 0.1rem;
+    text-align: center;
+  }
+  .dst-accent-bar {
+    display: block;
+    height: 4px;
+    width: 64px;
+    background: #C6A664;
+    border-radius: 8px;
+    margin: 0 auto 2.2rem auto; /* always centered */
+  }
+
+  /* SUBHEADINGS */
+  .dst-section h2,
+  .dst-section h3 {
+    text-align: center;
+    color: #002B45;
+  }
+  .dst-section h2 {
+    font-size: 1.19rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .dst-section h3 {
+    font-size: 1.01rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* PARAGRAPHS & LISTS (all centered) */
+  .dst-section p,
+  .dst-section ul,
+  .dst-section ol {
+    font-size: 1.01rem;
+    color: #26344e;
+    margin: 0.7em auto 1.1em auto;
+    line-height: 1.75;
+    text-align: center;
+  }
+  .dst-section ul,
+  .dst-section ol {
+    list-style: disc inside;
+    padding: 0;
+    margin: 0.5em auto 1.4em auto;
+  }
+  .dst-section li {
+    margin-bottom: 0.6em;
+    text-align: center; /* center each list item */
+  }
+
+  /* CTAs */
+  .dst-btn {
+    display: inline-block;
+    background: #C6A664;
+    color: #002B45 !important;
+    font-size: 1.13rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    padding: 1.2em 2.5em;
+    margin: 2.2rem auto 1.2rem auto;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-align: center;
+    box-shadow: 0 2px 8px #C6A66425;
+    width: 100%;
+    max-width: 420px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .dst-btn:hover,
+  .dst-btn:focus {
+    background: #002B45;
+    color: #ffffff !important;
+  }
+
+  /* DISCLAIMERS (centered, gold border at left) */
+  .dst-disclaimer {
+    font-size: 0.93em;
+    background: none;
+    border-left: 4px solid #C6A664;
+    padding: 0.65em 1em;
+    margin: 1.6em auto 1.2em auto;
+    width: 100%;
+    max-width: 850px;
+    color: #b4953e;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.87;
+  }
+
+  /* INVISIBLE IMAGE SPACERS (reserve space for images) */
+  .img-cover,
+  .img-banner,
+  .img-mid,
+  .img-large,
+  .img-timeline {
+    width: 100%;
+    height: 32px;
+    margin: 1.2rem auto;
+  }
+  .img-steps-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin: 1.1rem auto 1.5rem auto;
+  }
+  .img-step {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* RESPONSIVE ADJUSTMENTS */
+  @media (max-width: 700px) {
+    .dst-section {
+      padding: 1.2rem 0 1.6rem;
+    }
+    .dst-title {
+      font-size: 1.19rem;
+    }
+    .dst-section h2 {
+      font-size: 0.97rem;
+    }
+    .dst-section p,
+    .dst-section ul,
+    .dst-section ol {
+      font-size: 0.97rem;
+    }
+    .img-cover,
+    .img-banner,
+    .img-mid,
+    .img-large,
+    .img-timeline {
+      height: 20px;
+      margin: 0.6rem 0;
+    }
+    .img-step {
+      width: 9px;
+      height: 9px;
+    }
+    .dst-accent-bar {
+      width: 32px;
+      height: 3px;
+      margin-bottom: 1.2rem;
+    }
+    .dst-navbar {
+      gap: 1.2vw;
+      padding: 0.3rem 2vw 0.3rem 2vw;
+    }
+    .dst-navbar a {
+      font-size: 0.95rem;
+      padding: 0.35em 0.8em;
+    }
+  }
+</style>
+
+<nav class="dst-navbar">
+  <a href="#intro" id="nav-intro">Overview</a>
+  <a href="#qualified" id="nav-qualified">1031 DST Rules</a>
+  <a href="#considerations" id="nav-considerations">Investment Considerations</a>
+  <a href="#exits" id="nav-exits">DST Exits & UPREITs</a>
+</nav>
+
+<!-- ================================================ -->
+<!-- SECTION 1: DSTs and §1031 Exchanges                -->
+<!-- ================================================ -->
+<section class="dst-section" id="intro">
+  <div class="dst-title">DSTs and §1031 Exchanges</div>
+  <span class="dst-accent-bar"></span>
+  <div class="img-cover"></div>
+
+  <h2>What is a Delaware Statutory Trust</h2>
+  <p>A Delaware Statutory Trust (DST) is an investment trust, formed under Delaware state law, to hold assets on behalf of the DST’s beneficial owners (investors). Many states offer statutory business trusts, but since 1988 Delaware has become the favored jurisdiction for forming such entities.</p>
+
+  <h2>Like Kind Real Estate</h2>
+  <p>DST investors enjoy limited liability and passive ownership, yet they are treated as fractional owners of DST assets for tax law purposes. DSTs are now used as the underlying business entity for multiple types of investment vehicles, including collateralized mortgage obligations, mutual funds, and closed-end funds. However, DSTs are best known for owning real estate in a structure that qualifies as “like kind real estate” under section 1031 of the Internal Revenue Code.</p>
+  <p>§1031 exchange-qualified DSTs (“1031 DSTs”) are sold as private placements under SEC rules, which means investors generally must be “accredited investors”.<sup>1</sup></p>
+
+  <h2>A PPM Contains Comprehensive DST Details</h2>
+  <p>The firms who create DST investments (known as “sponsors”) syndicate most offerings through a network of independent broker-dealers and Registered Investment Advisors. DST offering information is provided in a private placement memorandum (“PPM”) that is typically 200-300 pages long, not including transactional exhibits.</p>
+  <p>Investors should consult with their tax professionals before, during and after investing in a DST to ensure a full understanding of tax consequences and filing requirements.</p>
+  <p><em>The above graphic is intended for illustrative purposes only to show potential benefits of real estate within a diversified portfolio. This should not be considered a recommendation of any product or strategy or investment advice.</em></p>
+  <p>For tax purposes, DST investors are treated as fractional owners of the DST real estate. Investors receive their prorated share of current net income and any potential gain (or loss) upon sale.</p>
+  <div class="dst-disclaimer">
+    <sup>1</sup> Accredited investors (typically defined as having a $1 million net worth excluding primary residence or $200,000 income individually/$300,000 jointly in each of the last two years (or have an active Series 7, Series 82, or Series 65 FINRA registration) and accredited entities only. If you are unsure if you are an accredited investor and/or an accredited entity, please verify with your CPA or attorney.
+  </div>
+</section>
+
+<!-- ================================================ -->
+<!-- SECTION 2: Assets, Structure & 1031 Rules        -->
+<!-- ================================================ -->
+<section class="dst-section" id="qualified">
+  <div class="dst-title">DSTs Can Have One Asset or Many</div>
+  <span class="dst-accent-bar"></span>
+  <div class="img-banner"></div>
+
+  <p>A DST could include a dozen assets, though most DSTs own one to three properties. Most DSTs comprise class-A multifamily buildings. Other popular sectors include industrial, self-storage, senior housing, student housing and retail. Each DST investor receives their prorated share of the DST’s distributable net income (typically paid monthly) and a prorated share of the DST’s net asset value upon sale of the property. Most DSTs acquire stable, institutional caliber properties. Investor proceeds typically include reserves for future capital expenditures.</p>
+
+  <h2>Structured for Investor Ease</h2>
+  <p>Unlike tenant-in-common (“TIC”) programs, the only property owner in a DST offering is the DST itself. The DST is also the only borrower (if applicable). This structure makes title and financing much simpler for the DST—and its investors—compared to TICs. Although they are not directly on title, DST investors report their annual taxes on Schedule E, the same form used by rental property landlords. And DST investors can deduct their prorated share of depreciation expenses, subject to the cost-basis rules for §1031 exchanges.</p>
+
+  <h2>1031-Qualified DST Investments</h2>
+  <div class="img-mid"></div>
+  <p>In 2004, the IRS issued Revenue Ruling 2004-86, which sets forth how a DST must be structured to qualify as replacement property in a §1031 exchange.</p>
+
+  <p>A 1031 DST:</p>
+  <ul>
+    <li>Can only purchase real estate and short-term obligations (e.g. money market accounts)</li>
+    <li>Cannot initiate additional “capital calls”</li>
+    <li>Cannot renegotiate or refinance the loan, if applicable</li>
+    <li>Cannot renegotiate leases or enter into new leases (apartment residents are technically sub-tenants)</li>
+    <li>Cannot make major improvements to the real estate</li>
+    <li>Must distribute all cash, other than the necessary reserves, to investors</li>
+    <li>Cannot sell or exchange the property and reinvest the proceeds (i.e. no turnover allowed within the portfolio)</li>
+  </ul>
+
+  <h2>1031 Exchange Timelines & Procedures</h2>
+  <p>Based on the above caveats, a DST will qualify as “like kind” replacement property, thereby allowing a taxpayer to transition from an active landlord to a passive investor undeterred by capital gains taxes. All the familiar timelines and procedures for §1031 exchanges apply to DST investments:</p>
+
+  <p>A 1031 DST investment is “like kind” with any other real estate investment for purposes of completing a §1031 exchange.</p>
+  <ul>
+    <li>Both your relinquished property and your replacement property must be held for investment or for productive use in a trade or business.</li>
+    <li>Personal residences, vacation homes, development inventory and flipped properties do not qualify for a §1031 exchange.</li>
+    <li>Only U.S. property can replace U.S. property.</li>
+    <li>Your escrow agent must transfer the proceeds of your sale directly to a Qualified Intermediary (“QI”).</li>
+    <li>Before you close your sale, you must establish an account with a QI, who will coordinate with your escrow agent. We recommend using a member of the Federation of Exchange Accommodators.</li>
+    <li>You must identify your replacement property within 45 days after closing your sale, by submitting an “ID Letter” form to your QI.</li>
+    <li>You must acquire your replacement property within 180 days.</li>
+    <li>There are no personal exceptions to these rules.</li>
+    <li>The federal government may extend deadlines due to regional disasters.</li>
+    <li>If you complete your §1031 replacement acquisition within 45 days, no ID letter is required.</li>
+    <li>Otherwise, the IRS limits the number or value of replacement properties you may identify as follows:
+      <ul>
+        <li>Three-property rule – identify up to three properties of any value – OR –</li>
+        <li>200% rule – identify four or more properties; their total value cannot exceed 200% of the property sold – OR –</li>
+        <li>95% rule – identify any number, of any price, and acquire at least 95% of the total value.</li>
+      </ul>
+    </li>
+    <li>To defer 100% of the capital gains tax liability, two requirements must be met:
+      <ul>
+        <li>Reinvest all the cash – all the cash that was generated from the sale of the relinquished property must be reinvested into the replacement property or properties</li>
+        <li>Purchase equal or greater value – the replacement property (or properties) must be equal or greater in value to the relinquished property.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>In other words, you must replace all your equity and all your debt.</p>
+</section>
+
+<!-- ================================================ -->
+<!-- SECTION 3: DST Investment Considerations          -->
+<!-- ================================================ -->
+<section class="dst-section" id="considerations">
+  <div class="dst-title">DST Investment Considerations</div>
+  <span class="dst-accent-bar"></span>
+  <div class="img-timeline"></div>
+
+  <h2>Potential Benefits</h2>
+  <p>1031 DSTs offer the potential for passive ownership, institutional management, consistent income, diversification, flexible investing and built-in, non-recourse financing.</p>
+
+  <h2>Tax Deferral or Avoidance</h2>
+  <p>Passive real estate held for investment purposes can be exchanged multiple times over one’s lifetime. Ultimately all deferred capital gains can be avoided altogether when the property’s cost basis is “stepped up” at death. Investors are not guaranteed an interest in the program until all agreements are signed and the exchange proceeds are transferred to the program. A purchase may be delayed and may not satisfy the timeliness requirements of IRC §1031.</p>
+
+  <h2>Truly Passive Ownership</h2>
+  <p>Investors in 1031 DSTs no longer have the hassles of being a landlord. Rather, investors need only to receive periodic electronic deposits (if applicable, not guaranteed), pay attention to quarterly property updates, and forward tax statements to their accountants. There are no voting requirements and no threats of capital calls. However, DST investors have no control over leasing, financing, management or disposition.</p>
+
+  <h2>Institutional Sourcing and Operation</h2>
+  <p>Most individual landlords conducting a §1031 exchange own a single property in a single market with perhaps a single tenant, operated either by themselves or a small local property manager. Conversely, DSTs offer the opportunity to own a fractional interest in tens or hundreds of millions of dollars of real estate, in assets that were sourced and now operated by an institutional real estate firm (often with a demonstrable track record in acquiring/operating/selling investment grade real estate assets on behalf of REITs, pension plans, endowments, partnerships and DSTs), often managed by a regional or national property-management company with hundreds or even thousands of employees, in programs that have been subjected to multiple layers of due diligence and an offering memorandum (PPM) that includes a professional business plan and detailed financial projections.</p>
+  <p>There can be no assurance that the investment objectives described in the PPM will be achieved. Past performance cannot be relied upon to assess the future performance of the sponsor or any program.</p>
+
+  <h2>Diversification</h2>
+  <p>1031 DSTs offer the potential for various levels of diversification:</p>
+  <ul>
+    <li>Types and Numbers of Tenants</li>
+    <li>Sectors of Real Estate</li>
+    <li>Geographies</li>
+    <li>Sponsors/Operators</li>
+  </ul>
+
+  <h2>Built-in, Non-recourse Financing</h2>
+  <p>To conduct a complete §1031 exchange, a taxpayer must replace the entire value of his/her rental property, including the loan. A new loan can be difficult; obtaining an investment loan, as opposed to an owner-occupied loan, may be an underwriting challenge. In DST programs, the acquisition loan typically is in place before the first investors exchange into the property. All loan terms are predetermined, and there are two parties to the loan agreement: the bank and the trust entity. Despite not being a named party to the loan, the individual DST investors each receive “credit” for their share of the nonrecourse loan for purposes of complying with §1031.</p>
+  <p>Most DST programs rely on leverage—an acquisition loan or similar form of indebtedness—to acquire the property. Leverage has the effect of amplifying any percentage gain or loss on invested equity. If a program does not liquidate before the interest-only period ends (typically five to seven years), loan amortization likely will result in reduced distributions to investors. There can be no assurance that the disposition of the property will allow for the repayment of outstanding indebtedness.</p>
+
+  <h2>Potential for Consistent Income</h2>
+  <p>Though not guaranteed and subject to reduction or suspension, most DSTs pay monthly distributions, with yield rates typically reset on an annual basis. There can be no assurance that future distributions will match the initial distribution rate, nor that distributions will continue at all. Investors are cautioned not to rely on initial distributions in making an investment decision.</p>
+  <p><strong>SEE ADDITIONAL RISKS AND LIMITATIONS ON PAGE 8</strong></p>
+
+  <div class="dst-disclaimer">DSTs pose higher expenses, less liquidity, less control, and similar operating risks as owning direct real estate. See additional risks and limitations on the last section.</div>
+
+  <h2>Flexible Investing</h2>
+  <p>DSTs do not require escrows or notaries. Transactions are completed using DocuSign or similar technology. Subject to minimums ($100,000-500,000), investments can be in any increment. Investments typically close in less than five business days. While investments close quickly, the hold period for the investment can be 10+ years, and there is no guarantee of a liquidation date. There is no public market for program interests and there is only a very limited possibility to seek a buyer from among the other owners, and likely only at a significant discount to current value.</p>
+
+  <h2>Fees and Costs</h2>
+  <ul>
+    <li>Source real estate from among thousands of listed properties around the United States and perform ongoing market research and data analysis</li>
+    <li>Conduct intensive property-specific due diligence and prepare complicated financial models</li>
+    <li>Secure, ideally, optimal financing terms</li>
+    <li>Engage top property-management companies or, in some cases, utilize in-house property management</li>
+    <li>Execute value-add strategies on a massive scale</li>
+    <li>Provide ongoing accounting and tax reporting</li>
+    <li>Monitor the property and the market to optimize disposition timing</li>
+    <li>Apply years or decades of experience from firms that often are large operators of institutional-caliber real estate portfolios</li>
+  </ul>
+
+  <div class="img-steps-row">
+    <div class="img-step"></div>
+    <div class="img-step"></div>
+    <div class="img-step"></div>
+    <div class="img-step"></div>
+    <div class="img-step"></div>
+    <div class="img-step"></div>
+  </div>
+
+  <a class="dst-btn" href="#exits">Read About DST Exits</a>
+</section>
+
+<!-- ================================================ -->
+<!-- SECTION 4: DST Exits and UPREITs                  -->
+<!-- ================================================ -->
+<section class="dst-section" id="exits">
+  <div class="dst-title">DST Exits and UPREITs</div>
+  <span class="dst-accent-bar"></span>
+
+  <h2>How Do I Get Out?</h2>
+  <p>As stated above, during the hold period of a DST investment, there is little opportunity to liquidate one’s interests, and there is no secondary market for DSTs. Further, any willing buyer likely will demand a significant discount to the current value. As a practical matter, DST investors must wait until the property is disposed by the trust manager, under one of two most likely scenarios:</p>
+
+  <h3>1. Conventional DST Exit: Sale to a Third Party</h3>
+  <p>Historically, most DST properties have been sold between five and ten years. In some cases, a portfolio of properties may require multiple transactions. Although there is no predetermined sale date and no guarantee of sale, most DSTs must liquidate within ten years. This is because Rev. Ruling 2004-86 prohibits 1031 DSTs from refinancing their loans, and therefore the typical ten-year DST loan indirectly creates a sale deadline. DSTs with no debt have no such limitation. Upon the sale of a DST’s real estate assets, investors have the same options as when they started:</p>
+  <ul>
+    <li>Receive prorated sales proceeds directly and pay any outstanding capital gains tax;</li>
+    <li>Reinvest proceeds via a §1031 exchange back into traditional real estate;</li>
+    <li>Reinvest proceeds via a §1031 exchange into another DST.</li>
+  </ul>
+  <p>Some taxpayers may opt to withhold some taxable cash and reinvest the remaining proceeds, thereby enhancing their overall portfolio liquidity.</p>
+
+  <h3>Step-up in Basis upon Death</h3>
+  <p>For individual investors, current law allows heirs to inherit certain appreciated assets subject to a cost basis that is “stepped up” at the date of death. Put more simply, death effectively eliminates the long-deferred capital gains tax bill. When heirs sell inherited property, rather than pay capital gains tax based on the historic adjusted cost basis of the asset, the cost basis is reset to the asset’s value when the decedent died. This principle applies equally to rental properties, DSTs and REITs. Of these categories of real estate, however, REITs are arguably the simplest asset to inherit and liquidate. Conventional DSTs are similarly passive but cannot be liquidated as quickly as REIT interests.</p>
+
+  <h3>2. UPREIT Exit: Convert to a REIT under IRC §721</h3>
+  <p>In recent years, a DST exit strategy involving real estate investment trusts (“REITs”) has become increasingly common. A REIT is a company that owns and operates real estate, with the taxes and depreciation passed through to the investors. To qualify for REIT status under IRS rules, the company must have at least 100 investors, it must derive at least 75% of its income from real estate assets, and it must distribute at least 90% of its income (other rules also apply). REIT investors are treated as owning shares or units of a company, not as fractional real estate owners. A REIT can be public and listed on a stock exchange, public and not listed on an exchange (“non-traded”), or private.</p>
+  <p>While a REIT does not qualify as replacement property in a §1031 exchange, it is possible to ultimately exchange a rental property for REIT interests in a two-step process. The first step is a §1031 exchange into a DST property that is slated to be acquired by an Umbrella Partnership REIT (“UPREIT”). In the second step—after a 2–4-year hold period—DST investors contribute their interests to an UPREIT in exchange for units of the UPREIT’s operating partnership (“OP units”). Similar to a §1031 exchange, this conversion is tax deferred under section 721 of the Internal Revenue Code. Most UPREITs associated with DST sponsors are public, non-traded REITs. Some UPREIT programs may offer DST investors the option to be “cashed out,” but most UPREIT-designated DSTs require mandatory conversion into the REIT.</p>
+
+  <h2>1031 DST REIT TIMELINE</h2>
+  <div class="img-timeline"></div>
+  <p>1031 DST REIT TIMELINE</p>
+
+  <h2>Additional UPREIT Details</h2>
+  <p>Once in an UPREIT partnership, investors receive an annual K-1 statement and continue to deduct their prorated share of depreciation. After an initial hold period (typically 12 months), holders of OP units have the potential ability to redeem some or all of their interests, subject to a REIT’s share redemption policy. Of course, withdrawals are subject to taxation, and OP units cannot be exchanged under IRC §1031.</p>
+
+  <h2>SPONSOR CONFLICTS</h2>
+  <p>A program sponsor and its affiliates are subject to conflicts of interest between their activities, roles and duties for other entities and the activities, roles and duties they have assumed on behalf of the program. Conflicts exist in allocating management time, services and functions between their current and future activities and the program. None of the arrangements or agreements between affiliated entities, including those relating to the purchase price of program properties or compensation, is the result of arm’s length negotiations.</p>
+  <p>A program sponsor and its affiliates receive substantial compensation in the form of fees for acquisition, financing, asset management, property management and disposition. Although a sponsor may have a long track record, the entities it creates to manage individual programs typically are de novo with no operating history.</p>
+
+  <h2>PERFORMANCE RISK</h2>
+  <p>DSTs are considered speculative and there is no guarantee that investors will receive any return. Investment may result in loss of entire principal.</p>
+
+  <h2>DISTRIBUTION RISK</h2>
+  <p>Distributions are not guaranteed and may be sourced from non-income items and constitute a return of capital.</p>
+
+  <h2>TRANSACTION RISK</h2>
+  <p>If the program property or portfolio has not yet closed, there is a risk that the purchase may not be consummated. Especially in the case of new or inexperienced program sponsors, it is possible that the program could be delayed in, or fail entirely to, raise the entire equity offering amount.</p>
+
+  <h2>REAL ESTATE RISK</h2>
+  <p>Program investors are buying real estate, with all of the risks inherent in any real estate investment, including:</p>
+  <ul>
+    <li>General acquisition, ownership and operational risks</li>
+    <li>Environmental, regulatory, zoning and easement issues</li>
+    <li>Increased competition and decreased occupancy</li>
+    <li>Unforeseen maintenance, repairs and capital expenditures</li>
+    <li>Macroeconomic changes, including interest and cap rates</li>
+    <li>Tenant acquisition, retention and re-leasing costs</li>
+  </ul>
+  <p>Although significant due diligence may be performed by sponsors, lenders, third-party consultants, appraisers, broker-dealers and registered investment professionals, this does not ensure that an investment will perform as projected. There may be issues that are not discovered through due diligence prior to or following an investor’s subscription in a passive §1031 program, which may cause an investor to incur losses up to the entire amount of the investment. The risks set forth herein are not exhaustive of all investment risks, and certain programs have greater or different risks than others.</p>
+
+  <h2>PRIVATE PLACEMENT AND ACCREDITED INVESTOR REQUIREMENT</h2>
+  <p>Private placements are only available to accredited investors (typically have a $1 million net worth excluding primary residence or $200,000 income individually/$300,000 jointly of the last three years) and accredited entities only. If you are unsure if you are an accredited investor and/or an accredited entity, please verify with your CPA and attorney.</p>
+
+  <h2>SUITABILITY</h2>
+  <p>Because investor situations and objectives vary, this information is not intended to indicate suitability for any particular investor.</p>
+
+  <div class="dst-disclaimer">
+    This is for informational purposes only and does not constitute an offer to purchase or sell securitized real estate investments. There are material risks associated with investing in private placements, DST properties and real estate securities including illiquidity, general market conditions, interest rate risks, financing risks, potentially adverse tax consequences, general economic risks, development risks, and potential loss of the entire investment principal. Such offers are only made through the sponsor’s Private Placement Memorandum (PPM) which is solely available to accredited investors and accredited entities.
+  </div>
+  <div class="dst-disclaimer" style="border-left: none; margin-top: 0.5em;">
+    <p>1031capitalsolutions.com</p>
+    <p>Securities offered through Concorde Investment Services, LLC (CIS), member FINRA/SIPC. Advisory services offered through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser. 1031 Capital Solutions is independent of CIS and CAM.</p>
+  </div>
+</section>
