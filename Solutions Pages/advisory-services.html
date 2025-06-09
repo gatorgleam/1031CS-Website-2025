@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Advisory Services</title>
   <style>
-    /* 1. Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
     /* 2. Color Variables */
     :root {
-      --color-primary: #002B45;       /* Dark Navy */
-      --color-accent:  #C6A664;       /* Soft Gold */
-      --color-text:    #26344e;       /* Dark Slate */
-      --color-bg:      #ffffff;       /* Pure White */
-      --color-disclaimer: #b4953e;    /* Gold-tone for disclaimers */
-      --shadow-base:   rgba(0, 43, 69, 0.03); /* Light navy shadow */
+      --color-primary: var(--cs-primary);
+      --color-accent: var(--cs-accent);
+      --color-text: var(--cs-text);
+      --color-bg: var(--cs-bg);
+      --color-disclaimer: var(--cs-disclaimer);
+      --shadow-base: var(--cs-shadow-base);
     }
 
     /* 3. Scope all rules under .custom-advisory-container */
@@ -26,7 +23,6 @@
       color: var(--color-text);
     }
 
-    /* 4. Base reset for elements inside the container */
     .custom-advisory-container {
       margin: 0;
       padding: 0;
@@ -35,7 +31,7 @@
       text-decoration: none;
     }
 
-    /* 5. Section Card (Full-Width Background) */
+    /* 5. Section Card */
     .custom-advisory-container .section-card {
       width: 100%;
       margin: 0;
@@ -52,7 +48,7 @@
       margin-right: auto;
     }
 
-    /* 6. Typography: Titles & Headings */
+    /* 6. Typography */
     .custom-advisory-container .title-lg {
       font-size: 2.05rem;
       font-weight: 700;
@@ -97,10 +93,11 @@
       list-style: disc inside;
       padding: 0;
       margin: 0.5em auto 1.4em auto;
+      display: table;
     }
     .custom-advisory-container .section-content li {
       margin-bottom: 0.6em;
-      text-align: center;
+      text-align: left;
     }
 
     /* 8. Call-To-Action Button */
@@ -117,7 +114,7 @@
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(198, 166, 100, 0.15);
+      box-shadow: 0 2px 8px rgba(164, 141, 41, 0.15);
       width: 100%;
       max-width: 420px;
       letter-spacing: 0.05em;
@@ -129,7 +126,7 @@
       color: var(--color-bg) !important;
     }
 
-    /* 9. Disclaimer & Fine Print */
+    /* 9. Disclaimer */
     .custom-advisory-container .disclaimer {
       font-size: 0.93em;
       background: none;
@@ -144,7 +141,7 @@
       opacity: 0.87;
     }
 
-    /* 10. Service Grid & Hover Animations */
+    /* 10. Service Grid */
     .custom-advisory-container .service-grid {
       display: flex;
       flex-wrap: wrap;
@@ -172,11 +169,11 @@
       transform: scale(1.25);
       box-shadow:
         0 0 16px var(--color-accent),
-        0 0 32px rgba(198, 166, 100, 0.5),
+        0 0 32px rgba(164, 141, 41, 0.5),
         0 4px 24px var(--shadow-base);
     }
 
-    /* 11. Responsive Adjustments */
+    /* 11. Responsive */
     @media (max-width: 700px) {
       .custom-advisory-container .section-card {
         padding: 1.2rem 0 1.6rem;
@@ -198,12 +195,133 @@
         font-size: 0.85rem;
       }
     }
+
+    .advisory-scope * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .advisory-scope {
+      --color-navy: #002B45;
+      --color-gold: #A48D29;
+      --color-slate: #26344e;
+      --color-soft: #f7f6f3;
+      --color-disclaimer: #b4953e;
+      color: var(--color-slate);
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  
+    .advisory-scope h1,
+    .advisory-scope h2,
+    .advisory-scope h3 {
+      color: var(--color-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+  
+    .advisory-scope h1 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+  
+    .advisory-scope h2 {
+      font-size: 1.3rem;
+      margin-top: 2.5rem;
+    }
+  
+    .advisory-scope h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .advisory-scope p,
+    .advisory-scope li {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+  
+    .advisory-scope ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      text-align: left;
+      display: inline-block;
+      max-width: 700px;
+    }
+  
+    .advisory-scope .divider {
+      width: 64px;
+      height: 4px;
+      background: var(--color-gold);
+      border-radius: 2px;
+      margin: 2rem auto;
+    }
+  
+    .advisory-scope .box {
+      background: var(--color-soft);
+      border-radius: 16px;
+      padding: 1.7rem 1.5rem;
+      margin: 2rem auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .advisory-scope .blue-box {
+      background: var(--color-navy);
+      color: #fff;
+      border-radius: 16px;
+      padding: 1.7rem 1.5rem;
+      margin: 2rem auto;
+      box-shadow: 0 2px 8px rgba(0, 43, 69, 0.15);
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .advisory-scope .blue-box strong {
+      color: var(--color-gold);
+    }
+  
+    .advisory-scope .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+  
+    .advisory-scope .service-item {
+      flex: 1 1 280px;
+      max-width: 350px;
+      background: var(--color-soft);
+      padding: 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+  
+    .advisory-scope .disclaimer {
+      font-size: 0.95rem;
+      color: var(--color-disclaimer);
+      border-left: 4px solid var(--color-gold);
+      padding-left: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      font-style: italic;
+    }
+  
+    .advisory-scope a {
+      color: var(--color-navy);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <!-- Wrapping container to isolate styles -->
   <div class="custom-advisory-container">
-    <!-- Advisory Services Section -->
     <section class="section-card" id="advisory-services">
       <h2 class="title-lg">Advisory Services</h2>
       <span class="accent-bar"></span>
@@ -229,7 +347,6 @@
       </a>
     </section>
 
-    <!-- Our Comprehensive Services Section -->
     <section class="section-card" id="comprehensive-services">
       <h2 class="heading-2">Our Comprehensive Services</h2>
       <div class="service-grid">
@@ -244,7 +361,6 @@
       </div>
     </section>
 
-    <!-- Disclaimer -->
     <section class="section-card">
       <div class="section-content">
         <div class="disclaimer">
@@ -252,6 +368,68 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <div class="advisory-scope">
+    <h1>Advisory Services</h1>
+    <div class="divider"></div>
+  
+    <p>Through our Investment Advisor platform, we operate with a fiduciary duty to integrate education, analysis, tax strategies, estate planning, and deal-structure consultation for high-net-worth real estate investors on a fee-for-service basis. This model is designed to ensure objectivity and alignment with clients' interests.</p>
+    
+    <p>Specializing in passive real estate investment programs, we bring decades of expertise and tailored solutions to an asset class that often serves as a cornerstone of affluent investors' portfolios. Our specialized knowledge enables us to address the unique complexities and opportunities within the real estate sector, empowering our clients to make informed, strategic decisions.</p>
+  
+    <h2>Who Qualifies?</h2>
+    <div class="box">
+      <p><strong>Based on our fee structure, the Advisory Services Platform may be more suitable for:</strong></p>
+      <ul>
+        <li>Transactions in excess of ten million dollars</li>
+        <li>Complex ownership structures</li>
+        <li>Advanced estate-planning situations</li>
+      </ul>
+    </div>
+  
+    <h2>Our Comprehensive Services</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <h3>Asset Analysis</h3>
+      </div>
+      <div class="service-item">
+        <h3>Deal Structure & Title Consulting</h3>
+      </div>
+      <div class="service-item">
+        <h3>Transaction Management</h3>
+      </div>
+      <div class="service-item">
+        <h3>Tax Mitigation Strategies</h3>
+      </div>
+      <div class="service-item">
+        <h3>Estate Planning</h3>
+      </div>
+      <div class="service-item">
+        <h3>Real Estate Investment Management</h3>
+      </div>
+      <div class="service-item">
+        <h3>Custom Analysis or Consultation as Needed</h3>
+      </div>
+      <div class="service-item">
+        <h3>Real Estate Investment Exit Planning</h3>
+      </div>
+    </div>
+  
+    <h2>A Fiduciary Approach: Putting Your Interests First</h2>
+    <p>Unlike traditional real estate brokerage firms or agencies driven by commission-based incentives, our fee-for-service model fosters a genuine fiduciary relationship with our clients. This structure ensures that the guidance we provide is objective, transparent, and wholly focused on achieving your financial goals.</p>
+  
+    <h2>Let's Work Together</h2>
+    <p>If you are ready to explore how we can help you maximize your real estate investments, we invite you to connect with one of our Managing Partners. Discover how our fiduciary-driven approach and specialized expertise can elevate your financial strategy and deliver lasting value. Contact us today to schedule a consultation.</p>
+  
+    <div class="disclaimer">
+      *1031 Capital Solutions and its representatives do not give tax or legal advice.
+    </div>
+  
+    <div class="disclaimer" style="border-left: none;">
+      <p><strong>1031 Capital Solutions</strong><br>
+      Securities offered through Concorde Investment Services, LLC (CIS), member FINRA/SIPC. Advisory services through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser. 1031 Capital Solutions is independent of CIS and CAM.</p>
+    </div>
   </div>
 </body>
 </html>

@@ -1,0 +1,260 @@
+/* === FONT IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* === GLOBAL VARIABLES === */
+:root {
+    /* Colors */
+    --cs-primary: #002B45;
+    --cs-accent: #A48D29;
+    --cs-accent-light: rgba(164, 141, 41, 0.7);
+    --cs-text: #26344e;
+    --cs-text-light: #333333;
+    --cs-bg: #ffffff;
+    --cs-disclaimer: #b4953e;
+    
+    /* Shadows */
+    --cs-shadow-base: 0 4px 16px rgba(0, 43, 69, 0.08);
+    --cs-shadow-hover: 0 6px 24px rgba(0, 43, 69, 0.12);
+    --cs-glow: 0 0 30px var(--cs-accent-light);
+    --cs-button-shadow: 0 2px 8px rgba(164, 141, 41, 0.15);
+    
+    /* Typography */
+    --cs-font-size-xs: 0.75rem;
+    --cs-font-size-sm: 0.9rem;
+    --cs-font-size-base: 0.95rem;
+    --cs-font-size-lg: 1.1rem;
+    --cs-font-size-xl: 1.6rem;
+    --cs-font-size-2xl: 2.1rem;
+    --cs-line-height: 1.6;
+    
+    /* Spacing */
+    --cs-spacing-xs: 0.5rem;
+    --cs-spacing-sm: 1rem;
+    --cs-spacing-md: 1.5rem;
+    --cs-spacing-lg: 2rem;
+    --cs-spacing-xl: 3rem;
+    
+    /* Border Radius */
+    --cs-radius-sm: 0.5rem;
+    --cs-radius-md: 1rem;
+    --cs-radius-lg: 1.25rem;
+    --cs-radius-full: 9999px;
+}
+
+/* === BASE STYLES === */
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    font-size: var(--cs-font-size-base);
+    line-height: var(--cs-line-height);
+    color: var(--cs-text);
+    background: var(--cs-bg);
+}
+
+/* === ANIMATIONS === */
+@keyframes cardGlow {
+    0% { box-shadow: var(--cs-shadow-base); }
+    100% { box-shadow: var(--cs-glow); }
+}
+
+@keyframes iconFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === COMMON COMPONENTS === */
+.cs-card {
+    background: var(--cs-primary);
+    color: var(--cs-bg);
+    border-radius: var(--cs-radius-md);
+    box-shadow: var(--cs-shadow-base);
+    padding: var(--cs-spacing-lg) var(--cs-spacing-md);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    will-change: transform, box-shadow;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cs-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--cs-glow);
+    z-index: 2;
+}
+
+.cs-icon {
+    color: var(--cs-accent);
+    font-size: 2em;
+    margin-bottom: var(--cs-spacing-sm);
+    animation: iconFloat 3s ease-in-out infinite;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.cs-icon:hover {
+    animation: iconPulse 0.5s ease-in-out;
+}
+
+/* === BUTTONS === */
+.cs-button {
+    display: inline-block;
+    background: var(--cs-accent);
+    color: var(--cs-primary) !important;
+    font-size: var(--cs-font-size-lg);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    padding: var(--cs-spacing-sm) var(--cs-spacing-xl);
+    border: none;
+    border-radius: var(--cs-radius-full);
+    box-shadow: var(--cs-button-shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, background-color, box-shadow;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    max-width: 420px;
+    width: 100%;
+}
+
+.cs-button:hover,
+.cs-button:focus {
+    background: var(--cs-primary);
+    color: var(--cs-bg) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--cs-glow);
+}
+
+/* === TYPOGRAPHY === */
+.cs-title {
+    color: var(--cs-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--cs-spacing-lg);
+}
+
+.cs-title-lg {
+    font-size: var(--cs-font-size-2xl);
+}
+
+.cs-title-md {
+    font-size: var(--cs-font-size-xl);
+}
+
+.cs-text {
+    color: var(--cs-text);
+    line-height: var(--cs-line-height);
+    margin-bottom: var(--cs-spacing-md);
+}
+
+.cs-disclaimer {
+    font-size: var(--cs-font-size-sm);
+    color: var(--cs-disclaimer);
+    font-style: italic;
+    border-left: 4px solid var(--cs-accent);
+    padding: var(--cs-spacing-sm);
+    margin: var(--cs-spacing-lg) auto;
+    max-width: 850px;
+    text-align: center;
+    opacity: 0.87;
+}
+
+/* === GRID & LAYOUT === */
+.cs-grid {
+    display: grid;
+    gap: var(--cs-spacing-md);
+    margin: var(--cs-spacing-lg) auto;
+    max-width: 1200px;
+    padding: 0 var(--cs-spacing-md);
+}
+
+.cs-flex {
+    display: flex;
+    gap: var(--cs-spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+    :root {
+        --cs-font-size-base: 0.9rem;
+        --cs-font-size-lg: 1rem;
+        --cs-font-size-xl: 1.4rem;
+        --cs-font-size-2xl: 1.8rem;
+        
+        --cs-spacing-xs: 0.4rem;
+        --cs-spacing-sm: 0.8rem;
+        --cs-spacing-md: 1.2rem;
+        --cs-spacing-lg: 1.6rem;
+        --cs-spacing-xl: 2.4rem;
+    }
+    
+    .cs-card {
+        width: 100%;
+        min-height: 150px;
+        height: auto;
+        padding: var(--cs-spacing-lg) var(--cs-spacing-md);
+        margin-bottom: var(--cs-spacing-md);
+    }
+    
+    .cs-button {
+        padding: var(--cs-spacing-sm) var(--cs-spacing-lg);
+        font-size: var(--cs-font-size-base);
+    }
+    
+    .cs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .cs-card:hover {
+        transform: none;
+        box-shadow: var(--cs-shadow-hover);
+    }
+    
+    .cs-button:hover {
+        transform: none;
+    }
+    
+    .cs-icon {
+        animation: none;
+    }
+    
+    .cs-icon:hover {
+        transform: scale(1.1);
+    }
+} 

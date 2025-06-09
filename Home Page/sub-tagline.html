@@ -1,0 +1,232 @@
+<!-- === 1031 Capital Solutions – Transparent Animated Section with HubSpot CTA === -->
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+<style>
+  /* Remove any extra spacing around the section */
+  #cs-section {
+    margin: 0;
+    padding: 0;
+    transform: scale(1);
+    transform-origin: top center;
+  }
+
+  @media (max-width: 540px) {
+    /* No scaling reduction on mobile */
+    #cs-section {
+      transform: scale(1);
+      transform-origin: top center;
+    }
+  }
+
+  #cs-section {
+    --gold: #C6A664;
+    --gold-light: rgba(198, 166, 100, 0.15);
+    --navy: #002B45;
+    --hd: 'Playfair Display', serif;
+    --bd: 'Inter', sans-serif;
+
+    font-family: var(--bd);
+    text-align: center;
+    background: transparent;
+  }
+
+  #cs-section .panel {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    /* Removed border-radius to eliminate the box shape */
+    border-radius: 0;
+    /* Ensure background remains transparent */
+    background-color: transparent;
+    /* Remove any box-shadow */
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+
+    /* Ensure there’s space under the button but not outside the border */
+    padding-bottom: 2rem !important;
+  }
+
+  #cs-section h2 {
+    font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.2 var(--hd);
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
+
+  #cs-section p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    animation: fadeIn 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+
+  /* Default (desktop/tablet): single row icons */
+  #cs-section .icon-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+  }
+
+  /* Icons: smaller flex-basis and reduced text sizes */
+  #cs-section .icon {
+    flex: 1 1 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  #cs-section .icon:nth-child(1) { animation-delay: 0.3s; }
+  #cs-section .icon:nth-child(2) { animation-delay: 0.45s; }
+  #cs-section .icon:nth-child(3) { animation-delay: 0.6s; }
+  #cs-section .icon:nth-child(4) { animation-delay: 0.75s; }
+  #cs-section .icon:nth-child(5) { animation-delay: 0.9s; }
+
+  /* Reduce icon font size */
+  #cs-section .icon i {
+    font-size: 1.25rem;
+    color: var(--gold);
+    transition: transform 0.3s;
+  }
+  #cs-section .icon:hover i {
+    transform: scale(1.12);
+  }
+
+  /* Reduce small text size */
+  #cs-section .icon small {
+    font: 500 0.75rem var(--bd);
+    margin-top: 0.25rem;
+    color: #333;
+    line-height: 1.2;
+  }
+
+  /* ── UPDATED BUTTON STYLE: taller, wider, room for link placeholder ── */
+  #cs-section .btn {
+    display: inline-block;
+    margin-top: 4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background: #002B45;
+    color: #FFFFFF;
+    padding: 1rem 2rem;              /* increased vertical and horizontal padding */
+    border-radius: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    min-width: 250px;                /* ensures a wider button */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.2s;
+    /* Removed previous margin-bottom so space only comes from panel padding */
+  }
+
+  #cs-section .btn:hover {
+    /* Soft gold glow on hover, no color change */
+    box-shadow:
+      0 0 12px rgba(198, 166, 100, 0.7),
+      0 4px 16px rgba(198, 166, 100, 0.4);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 540px) {
+    /* Make icon grid wrap into 2 rows: 3 items first row, 2 items centered below */
+    #cs-section .icon-grid {
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    /* Each icon takes ~30% width to fit 3 per row */
+    #cs-section .icon {
+      flex: 1 1 30%;
+      margin-bottom: 1rem;
+    }
+
+    /* The panel’s bottom padding already creates space under the button */
+    #cs-section .panel {
+      padding-bottom: 2rem;
+    }
+
+    /* ── MOBILE OVERRIDE FOR BUTTON ── */
+    #cs-section .btn {
+      display: block;
+      width: 80%;
+      max-width: 250px;
+      margin: 2rem auto 0;            /* only top margin; bottom space comes from panel padding */
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* === Keyframes for Animation === */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* ─── [ NEW: force zero space below entire section ] ─── */
+  #cs-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  #cs-section .panel {
+    margin-bottom: 0 !important;
+  }
+</style>
+
+<section id="cs-section">
+  <div class="panel">
+    <h2>Retire from Real Estate, Keep Your Wealth Working</h2>
+    <p>
+      <strong style="color: #C6A664;">1031 Capital Solutions</strong> helps accredited investors retire from their investment property through financial planning, technology, and white glove customer service. Their Investment Advisor platform offers education, analysis, consultation and research, with a fiduciary duty to their clients. Through their brokerage platform, they provide a wide variety of vetted investment options including DSTs, REITs and other strategies designed to mitigate capital gains tax, as well as provide the potential for income, appreciation, and diversification.
+    </p>
+
+    <div class="icon-grid">
+      <div class="icon">
+        <i class="bi bi-bank2"></i>
+        <small>1031 Exchanges & DSTs</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-cash-coin"></i>
+        <small>Tax-Advantaged Strategies</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-person-check"></i>
+        <small>Fiduciary Planning</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-building"></i>
+        <small>Institutional Real Estate</small>
+      </div>
+      <div class="icon">
+        <i class="bi bi-journal-bookmark"></i>
+        <small>Education & Research</small>
+      </div>
+    </div>
+
+    <a
+      href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=21858660.112b3bde9400e874139c41104f7f6dc2.1749065899709.1749065899709.1749075533285.2&__hssc=21858660.2.1749075533285&__hsfp=2138463993&uuid=0cc0e697-2050-49f3-9a26-19e28ac66393"
+      class="btn"
+    >
+      Schedule Your Consultation
+    </a>
+  </div>
+</section>

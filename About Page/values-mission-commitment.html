@@ -1,0 +1,306 @@
+<div class="cs-about-section">
+    <div class="cs-about-inner">
+  
+      <div class="cs-about-title">Our Values</div>
+      <div class="cs-values-row">
+        <div class="cs-value-card">
+          <i class="fas fa-handshake"></i>
+          <div class="cs-value-title">Honesty</div>
+          We provide honest, trustworthy information to our clients.
+        </div>
+        <div class="cs-value-card">
+          <i class="fas fa-shield-alt"></i>
+          <div class="cs-value-title">Integrity</div>
+          We do what we say we will do.
+        </div>
+        <div class="cs-value-card">
+          <i class="fas fa-heart"></i>
+          <div class="cs-value-title">Service</div>
+          We act with a sense of urgency and purpose.
+        </div>
+        <div class="cs-value-card">
+          <i class="fas fa-lightbulb"></i>
+          <div class="cs-value-title">Creativity</div>
+          We explore ideas in an effort to find suitable solutions.
+        </div>
+        <div class="cs-value-card">
+          <i class="fas fa-chart-line"></i>
+          <div class="cs-value-title">Diligence</div>
+          We work hard to help our clients meet their financial goals.
+        </div>
+      </div>
+  
+      <hr class="cs-divider" />
+  
+      <div class="cs-block">
+        <div class="cs-block-title">Our Mission</div>
+        <div class="cs-block-text">
+          Our mission is to provide tax-efficient strategies for affluent investors across the U.S.
+        </div>
+      </div>
+  
+      <div class="cs-block">
+        <div class="cs-block-title">Our Commitment</div>
+        <ul class="cs-commitment-list">
+          <li>Take the time to understand your goals and objectives</li>
+          <li>Provide valuable advice and analysis</li>
+          <li>Fully disclose all fees, expenses, risks, and limitations related to products and strategies offered</li>
+          <li>Provide excellent customer service</li>
+        </ul>
+      </div>
+  
+    </div>
+  </div>
+  
+  <style>
+    @keyframes iconFloat {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  
+    @keyframes iconPulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  
+    .cs-about-section {
+      font-family: 'Inter', Arial, sans-serif;
+      background: transparent;
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+      max-width: 100vw;
+      text-align: center;
+    }
+    .cs-about-section * {
+      box-sizing: border-box;
+    }
+  
+    .cs-about-inner {
+      padding: 2rem 1.5rem 3rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cs-about-title {
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #002B45;
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
+    }
+  
+    .cs-values-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      position: relative;
+    }
+  
+    .cs-value-card {
+      background: #002B45;
+      color: #FFFFFF;
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 2rem 1.5rem;
+      width: 19%;
+      height: 250px;
+      text-align: center;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.5s ease;
+      will-change: transform, box-shadow;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      box-sizing: border-box;
+      overflow: hidden;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .cs-value-card i {
+      font-size: 2em;
+      color: #C6A664;
+      margin-bottom: 0.2em;
+      margin-top: 0.3em;
+      animation: iconFloat 3s ease-in-out infinite;
+      transform-origin: center;
+      display: inline-block;
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  
+    .cs-value-title {
+      font-size: 0.95em;
+      font-weight: 700;
+      color: #C6A664;
+      margin-bottom: 0.3em;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+  
+    .cs-value-card:hover {
+      transform: scale(1.03);
+      box-shadow: 
+        0 0 30px rgba(198, 166, 100, 0.7),
+        0 8px 32px rgba(198, 166, 100, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+    }
+  
+    .cs-value-card:hover i {
+      animation: iconPulse 0.5s ease-in-out;
+    }
+  
+    /* Specific animation delays */
+    .cs-value-card:nth-child(1) i { animation-delay: 0s; }
+    .cs-value-card:nth-child(2) i { animation-delay: 0.6s; }
+    .cs-value-card:nth-child(3) i { animation-delay: 1.2s; }
+    .cs-value-card:nth-child(4) i { animation-delay: 1.8s; }
+    .cs-value-card:nth-child(5) i { animation-delay: 2.4s; }
+  
+    @media (prefers-reduced-motion: reduce) {
+      .cs-value-card i { animation: none; }
+      .cs-value-card:hover i {
+        animation: none;
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+      .cs-value-card:hover {
+        animation: none;
+        box-shadow: 
+          0 0 30px rgba(198, 166, 100, 0.7),
+          0 8px 32px rgba(198, 166, 100, 0.4),
+          0 4px 16px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.5s ease;
+      }
+    }
+  
+    .cs-divider {
+      width: 50px;
+      margin: 2rem auto;
+      border-top: 2px solid #C6A664;
+      opacity: 0.3;
+    }
+    .cs-block {
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      background: #FFFFFF;
+      padding: 2rem 1.5rem;
+      border-left: 4px solid #C6A664;
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .cs-block-title {
+      color: #002B45;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .cs-block-text,
+    .cs-commitment-list {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #26344e;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cs-commitment-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1.5rem;
+    }
+    .cs-commitment-list li {
+      margin-bottom: 0.7em;
+      position: relative;
+      padding-left: 1.3em;
+      text-align: left;
+    }
+    .cs-commitment-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0.05em;
+      color: #C6A664;
+      font-weight: bold;
+      font-size: 1em;
+    }
+  
+    @media (max-width: 768px) {
+      .cs-about-inner {
+        padding: 1.5rem 0.5rem;
+      }
+      .cs-about-title {
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
+      }
+      .cs-values-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .cs-value-card {
+        width: 100%;
+        min-height: 150px;
+        height: auto;
+        font-size: 0.9rem;
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .cs-value-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .cs-block {
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+      }
+      .cs-block-title {
+        font-size: 1.125rem;
+      }
+      .cs-block-text,
+      .cs-commitment-list {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  

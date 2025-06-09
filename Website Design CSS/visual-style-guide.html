@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1031 Capital Solutions - Visual Style Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --cs-primary: #002B45;
+            --cs-accent: #A48D29;
+            --cs-accent-light: rgba(164, 141, 41, 0.7);
+            --cs-text: #26344e;
+            --cs-text-light: #333333;
+            --cs-bg: #ffffff;
+            --cs-disclaimer: #b4953e;
+            
+            --cs-shadow-base: 0 4px 16px rgba(0, 43, 69, 0.08);
+            --cs-shadow-hover: 0 6px 24px rgba(0, 43, 69, 0.12);
+            --cs-glow: 0 0 30px var(--cs-accent-light);
+            --cs-button-shadow: 0 2px 8px rgba(164, 141, 41, 0.15);
+            
+            --cs-font-size-xs: 0.75rem;
+            --cs-font-size-sm: 0.9rem;
+            --cs-font-size-base: 0.95rem;
+            --cs-font-size-lg: 1.1rem;
+            --cs-font-size-xl: 1.6rem;
+            --cs-font-size-2xl: 2.1rem;
+            --cs-line-height: 1.6;
+            
+            --cs-spacing-xs: 0.5rem;
+            --cs-spacing-sm: 1rem;
+            --cs-spacing-md: 1.5rem;
+            --cs-spacing-lg: 2rem;
+            --cs-spacing-xl: 3rem;
+            
+            --cs-radius-sm: 0.5rem;
+            --cs-radius-md: 1rem;
+            --cs-radius-lg: 1.25rem;
+            --cs-radius-full: 9999px;
+        }
+
+        /* Base Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: var(--cs-font-size-base);
+            line-height: var(--cs-line-height);
+            color: var(--cs-text);
+            background: var(--cs-bg);
+        }
+
+        /* Style Guide Container */
+        .style-guide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--cs-spacing-xl) var(--cs-spacing-md);
+        }
+
+        .section {
+            margin-bottom: var(--cs-spacing-xl);
+            padding: var(--cs-spacing-lg);
+            border: 1px solid #e5e5e5;
+            border-radius: var(--cs-radius-md);
+        }
+
+        .section-title {
+            font-size: var(--cs-font-size-xl);
+            font-weight: 700;
+            color: var(--cs-primary);
+            margin-bottom: var(--cs-spacing-lg);
+            border-bottom: 3px solid var(--cs-accent);
+            padding-bottom: var(--cs-spacing-sm);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: var(--cs-spacing-xl);
+            padding: var(--cs-spacing-xl) 0;
+            background: linear-gradient(135deg, var(--cs-primary) 0%, #003558 100%);
+            color: var(--cs-bg);
+            border-radius: var(--cs-radius-lg);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--cs-spacing-sm);
+        }
+
+        .header p {
+            font-size: var(--cs-font-size-lg);
+            opacity: 0.9;
+        }
+
+        /* Color Swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--cs-spacing-md);
+        }
+
+        .color-swatch {
+            text-align: center;
+            border-radius: var(--cs-radius-md);
+            overflow: hidden;
+            box-shadow: var(--cs-shadow-base);
+        }
+
+        .color-display {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .color-info {
+            padding: var(--cs-spacing-sm);
+            background: white;
+        }
+
+        .color-name {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .color-hex {
+            font-size: var(--cs-font-size-sm);
+            color: #666;
+            font-family: monospace;
+        }
+
+        /* Typography Examples */
+        .type-example {
+            margin-bottom: var(--cs-spacing-md);
+            padding: var(--cs-spacing-sm);
+            border-left: 4px solid var(--cs-accent);
+        }
+
+        .type-label {
+            font-size: var(--cs-font-size-xs);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cs-accent);
+            margin-bottom: 4px;
+        }
+
+        /* Component Styles */
+        .cs-title-lg {
+            font-size: var(--cs-font-size-2xl);
+            font-weight: 700;
+            color: var(--cs-primary);
+            line-height: 1.2;
+        }
+
+        .cs-title-md {
+            font-size: var(--cs-font-size-xl);
+            font-weight: 700;
+            color: var(--cs-primary);
+            line-height: 1.2;
+        }
+
+        .cs-text {
+            font-size: var(--cs-font-size-base);
+            color: var(--cs-text);
+            line-height: var(--cs-line-height);
+        }
+
+        .cs-disclaimer {
+            font-size: var(--cs-font-size-sm);
+            color: var(--cs-disclaimer);
+            font-style: italic;
+            border-left: 4px solid var(--cs-accent);
+            padding: var(--cs-spacing-sm);
+            margin: var(--cs-spacing-lg) 0;
+        }
+
+        /* Buttons */
+        .button-examples {
+            display: flex;
+            gap: var(--cs-spacing-md);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .cs-button {
+            display: inline-block;
+            background: var(--cs-accent);
+            color: var(--cs-primary) !important;
+            font-size: var(--cs-font-size-lg);
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            padding: var(--cs-spacing-sm) var(--cs-spacing-xl);
+            border: none;
+            border-radius: var(--cs-radius-full);
+            box-shadow: var(--cs-button-shadow);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform, background-color, box-shadow;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cs-button:hover,
+        .cs-button:focus {
+            background: var(--cs-primary);
+            color: var(--cs-bg) !important;
+            transform: translateY(-2px);
+            box-shadow: var(--cs-glow);
+        }
+
+        /* Cards */
+        .card-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--cs-spacing-md);
+        }
+
+        .cs-card {
+            background: var(--cs-primary);
+            color: var(--cs-bg);
+            border-radius: var(--cs-radius-md);
+            box-shadow: var(--cs-shadow-base);
+            padding: var(--cs-spacing-lg);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.5s ease;
+            will-change: transform, box-shadow;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cs-card:hover {
+            transform: scale(1.03);
+            box-shadow: var(--cs-glow);
+            z-index: 2;
+        }
+
+        .cs-icon {
+            color: var(--cs-accent);
+            font-size: 2em;
+            margin-bottom: var(--cs-spacing-sm);
+            animation: iconFloat 3s ease-in-out infinite;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .cs-icon:hover {
+            animation: iconPulse 0.5s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes iconFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes iconPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Spacing Examples */
+        .spacing-examples {
+            display: flex;
+            flex-direction: column;
+            gap: var(--cs-spacing-md);
+        }
+
+        .spacing-demo {
+            display: flex;
+            align-items: center;
+            gap: var(--cs-spacing-md);
+        }
+
+        .spacing-box {
+            background: var(--cs-accent);
+            border-radius: var(--cs-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: var(--cs-font-size-sm);
+        }
+
+        .spacing-xs { width: var(--cs-spacing-xs); height: var(--cs-spacing-xs); }
+        .spacing-sm { width: var(--cs-spacing-sm); height: var(--cs-spacing-sm); }
+        .spacing-md { width: var(--cs-spacing-md); height: var(--cs-spacing-md); }
+        .spacing-lg { width: var(--cs-spacing-lg); height: var(--cs-spacing-lg); }
+        .spacing-xl { width: var(--cs-spacing-xl); height: var(--cs-spacing-xl); }
+
+        /* Responsive Note */
+        .responsive-note {
+            background: #f8f9fa;
+            padding: var(--cs-spacing-md);
+            border-radius: var(--cs-radius-md);
+            border-left: 4px solid var(--cs-primary);
+            margin-top: var(--cs-spacing-lg);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .button-examples { flex-direction: column; align-items: stretch; }
+            .cs-button { width: 100%; }
+            .card-examples { grid-template-columns: 1fr; }
+            .spacing-demo { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .cs-card, .cs-icon, .cs-button {
+                animation: none !important;
+                transition: none !important;
+            }
+            .cs-card:hover { transform: none; }
+            .cs-button:hover { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="style-guide">
+        <!-- Header -->
+        <div class="header">
+            <h1>1031 Capital Solutions</h1>
+            <p>Visual Style Guide & Design System</p>
+        </div>
+
+        <!-- Colors Section -->
+        <div class="section">
+            <h2 class="section-title">🎨 Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-display" style="background: var(--cs-primary);">Navy Blue</div>
+                    <div class="color-info">
+                        <div class="color-name">Primary</div>
+                        <div class="color-hex">#002B45</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-display" style="background: var(--cs-accent);">Gold</div>
+                    <div class="color-info">
+                        <div class="color-name">Accent</div>
+                        <div class="color-hex">#A48D29</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-display" style="background: var(--cs-text); color: white;">Text</div>
+                    <div class="color-info">
+                        <div class="color-name">Text Gray</div>
+                        <div class="color-hex">#26344e</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-display" style="background: var(--cs-bg); color: var(--cs-text); border: 1px solid #ddd;">White</div>
+                    <div class="color-info">
+                        <div class="color-name">Background</div>
+                        <div class="color-hex">#FFFFFF</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-display" style="background: var(--cs-disclaimer);">Disclaimer</div>
+                    <div class="color-info">
+                        <div class="color-name">Disclaimer</div>
+                        <div class="color-hex">#b4953e</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-display" style="background: var(--cs-accent-light);">Light Gold</div>
+                    <div class="color-info">
+                        <div class="color-name">Accent Light</div>
+                        <div class="color-hex">rgba(164,141,41,0.7)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography Section -->
+        <div class="section">
+            <h2 class="section-title">📝 Typography</h2>
+            <div class="type-example">
+                <div class="type-label">Main Page Title (2.1rem)</div>
+                <h1 class="cs-title-lg">This is a main page title</h1>
+            </div>
+            <div class="type-example">
+                <div class="type-label">Section Heading (1.6rem)</div>
+                <h2 class="cs-title-md">This is a section heading</h2>
+            </div>
+            <div class="type-example">
+                <div class="type-label">Body Text (0.95rem)</div>
+                <p class="cs-text">This is body text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </div>
+            <div class="type-example">
+                <div class="type-label">Small Text (0.9rem)</div>
+                <p style="font-size: var(--cs-font-size-sm);">This is small text for captions and secondary information.</p>
+            </div>
+            <div class="cs-disclaimer">
+                This is disclaimer text with italic styling and gold border accent.
+            </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="section">
+            <h2 class="section-title">🔘 Buttons</h2>
+            <div class="button-examples">
+                <a href="#" class="cs-button">Primary Button</a>
+                <a href="#" class="cs-button">Schedule a Call</a>
+                <a href="#" class="cs-button">Learn More</a>
+            </div>
+            <p style="margin-top: var(--cs-spacing-md); font-size: var(--cs-font-size-sm); color: #666;">
+                Hover over buttons to see the gold glow effect and color transition.
+            </p>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="section">
+            <h2 class="section-title">📦 Cards & Components</h2>
+            <div class="card-examples">
+                <div class="cs-card">
+                    <i class="cs-icon fas fa-handshake"></i>
+                    <h3 style="color: var(--cs-accent); margin-bottom: var(--cs-spacing-sm);">Trust</h3>
+                    <p>Building lasting relationships through transparency and reliability.</p>
+                </div>
+                <div class="cs-card">
+                    <i class="cs-icon fas fa-shield-alt"></i>
+                    <h3 style="color: var(--cs-accent); margin-bottom: var(--cs-spacing-sm);">Security</h3>
+                    <p>Protecting your investments with institutional-grade security measures.</p>
+                </div>
+                <div class="cs-card">
+                    <i class="cs-icon fas fa-chart-line"></i>
+                    <h3 style="color: var(--cs-accent); margin-bottom: var(--cs-spacing-sm);">Growth</h3>
+                    <p>Maximizing returns through strategic investment opportunities.</p>
+                </div>
+            </div>
+            <p style="margin-top: var(--cs-spacing-md); font-size: var(--cs-font-size-sm); color: #666;">
+                Hover over cards to see the scaling effect and gold glow. Icons have floating animation.
+            </p>
+        </div>
+
+        <!-- Spacing Section -->
+        <div class="section">
+            <h2 class="section-title">📏 Spacing System</h2>
+            <div class="spacing-examples">
+                <div class="spacing-demo">
+                    <div class="spacing-box spacing-xs"></div>
+                    <span><strong>XS:</strong> 0.5rem (8px) - Icon margins, small gaps</span>
+                </div>
+                <div class="spacing-demo">
+                    <div class="spacing-box spacing-sm"></div>
+                    <span><strong>SM:</strong> 1rem (16px) - Button padding, small margins</span>
+                </div>
+                <div class="spacing-demo">
+                    <div class="spacing-box spacing-md"></div>
+                    <span><strong>MD:</strong> 1.5rem (24px) - Standard padding, card gaps</span>
+                </div>
+                <div class="spacing-demo">
+                    <div class="spacing-box spacing-lg"></div>
+                    <span><strong>LG:</strong> 2rem (32px) - Section padding, large margins</span>
+                </div>
+                <div class="spacing-demo">
+                    <div class="spacing-box spacing-xl"></div>
+                    <span><strong>XL:</strong> 3rem (48px) - Major section spacing</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Note -->
+        <div class="responsive-note">
+            <h3 style="margin-bottom: var(--cs-spacing-sm); color: var(--cs-primary);">📱 Responsive Design</h3>
+            <p>This style guide is responsive! Resize your browser window to see how components adapt to mobile screens. The breakpoint is at 768px.</p>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: var(--cs-spacing-xl); padding: var(--cs-spacing-lg); border-top: 1px solid #e5e5e5;">
+            <p style="color: #666; font-size: var(--cs-font-size-sm);">
+                1031 Capital Solutions Design System • Version 1.0<br>
+                Font: Montserrat • Performance Optimized • Accessibility Compliant
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

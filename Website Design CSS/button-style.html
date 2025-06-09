@@ -1,0 +1,56 @@
+<!-- Example 1: Native HTML button -->
+<button type="button">
+  Click Me
+</button>
+
+<!-- Example 2: Input-based button -->
+<input type="button" value="Submit Form">
+
+<!-- Example 3: Anchor styled as a button (works in Squarespace Code Blocks) -->
+<a href="https://example.com/your-link" target="_blank" rel="noopener">
+  Learn More
+</a>
+
+<!-- Example 4: Squarespace "Button Block" markup (if you copy its HTML) -->
+<div class="sqs-block-button-container">
+  <a class="sqs-block-button-element--medium" href="https://example.com/your-link">
+    Book a Call
+  </a>
+</div>
+
+<style>
+.sqs-block-button-element--medium,
+.sqs-block-button-element--large {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cs-primary);
+    color: var(--cs-bg);
+    border: none;
+    padding: 1em 2em;
+    border-radius: var(--cs-radius-sm);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    will-change: transform, box-shadow;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.sqs-block-button-element--medium:hover,
+.sqs-block-button-element--large:hover {
+    background-color: var(--cs-primary);
+    transform: scale(1.03);
+    box-shadow: var(--cs-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sqs-block-button-element--medium,
+    .sqs-block-button-element--large {
+        transition: none;
+    }
+    
+    .sqs-block-button-element--medium:hover,
+    .sqs-block-button-element--large:hover {
+        transform: none;
+        box-shadow: var(--cs-shadow-hover);
+    }
+}</style>
