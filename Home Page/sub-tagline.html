@@ -10,6 +10,18 @@
     padding: 0;
     transform: scale(1);
     transform-origin: top center;
+    /* Force zero space below entire section */
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    /* CSS variables */
+    --gold: #C6A664;
+    --gold-light: rgba(198, 166, 100, 0.15);
+    --navy: #002B45;
+    --hd: 'Playfair Display', serif;
+    --bd: 'Inter', sans-serif;
+    font-family: var(--bd);
+    text-align: center;
+    background: transparent;
   }
 
   @media (max-width: 540px) {
@@ -20,22 +32,10 @@
     }
   }
 
-  #cs-section {
-    --gold: #C6A664;
-    --gold-light: rgba(198, 166, 100, 0.15);
-    --navy: #002B45;
-    --hd: 'Playfair Display', serif;
-    --bd: 'Inter', sans-serif;
-
-    font-family: var(--bd);
-    text-align: center;
-    background: transparent;
-  }
-
   #cs-section .panel {
-    max-width: 900px;
+    max-width: 1200px; /* Wider on desktop */
     margin: 0 auto;
-    padding: clamp(2rem, 5vw, 3rem);
+    padding: clamp(2.5rem, 6vw, 4rem);
     /* Removed border-radius to eliminate the box shape */
     border-radius: 0;
     /* Ensure background remains transparent */
@@ -46,21 +46,22 @@
     transform: translateY(40px);
     animation: fadeInUp 1s ease-out forwards;
     animation-delay: 0.3s;
-
-    /* Ensure there’s space under the button but not outside the border */
+    /* Ensure there's space under the button but not outside the border */
     padding-bottom: 2rem !important;
+    /* Force zero space below panel */
+    margin-bottom: 0 !important;
   }
 
   #cs-section h2 {
-    font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.2 var(--hd);
+    font: 700 clamp(3rem, 8vw, 5rem)/1.2 var(--hd);
     color: var(--navy);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
   }
 
   #cs-section p {
     color: #333;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.5rem;
+    line-height: 1.9;
     animation: fadeIn 1.2s ease-out forwards;
     animation-delay: 0.6s;
     opacity: 0;
@@ -71,13 +72,13 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2.5rem;
+    gap: 1rem;
+    margin-top: 3rem;
   }
 
-  /* Icons: smaller flex-basis and reduced text sizes */
+  /* Icons: adjust flex-basis and increase small text size */
   #cs-section .icon {
-    flex: 1 1 80px;
+    flex: 1 1 100px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -92,9 +93,9 @@
   #cs-section .icon:nth-child(4) { animation-delay: 0.75s; }
   #cs-section .icon:nth-child(5) { animation-delay: 0.9s; }
 
-  /* Reduce icon font size */
+  /* Increase icon size */
   #cs-section .icon i {
-    font-size: 1.25rem;
+    font-size: 2.2rem;
     color: var(--gold);
     transition: transform 0.3s;
   }
@@ -102,12 +103,12 @@
     transform: scale(1.12);
   }
 
-  /* Reduce small text size */
+  /* Increase small text size */
   #cs-section .icon small {
-    font: 500 0.75rem var(--bd);
-    margin-top: 0.25rem;
+    font: 500 1.1rem var(--bd);
+    margin-top: 0.4rem;
     color: #333;
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   /* ── UPDATED BUTTON STYLE: taller, wider, room for link placeholder ── */
@@ -115,20 +116,19 @@
     display: inline-block;
     margin-top: 4rem;
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background: #002B45;
     color: #FFFFFF;
-    padding: 1rem 2rem;              /* increased vertical and horizontal padding */
+    padding: 1.2rem 2.4rem;          /* increased padding */
     border-radius: 0.75rem;
     text-decoration: none;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
-    min-width: 250px;                /* ensures a wider button */
+    min-width: 280px;                /* ensures a wider button */
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
     animation-delay: 1.2s;
-    /* Removed previous margin-bottom so space only comes from panel padding */
   }
 
   #cs-section .btn:hover {
@@ -140,32 +140,105 @@
   }
 
   @media (max-width: 540px) {
-    /* Make icon grid wrap into 2 rows: 3 items first row, 2 items centered below */
+    /* Optimize icon grid for mobile: 2 icons per row with better text space */
     #cs-section .icon-grid {
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 2rem 1rem;  /* vertical gap, horizontal gap */
       margin-top: 2rem;
       justify-content: center;
+      max-width: 100%;
+      padding: 0 0.5rem;
     }
-    /* Each icon takes ~30% width to fit 3 per row */
+    /* Each icon takes ~45% width to fit 2 per row with space for text */
     #cs-section .icon {
-      flex: 1 1 30%;
-      margin-bottom: 1rem;
+      flex: 0 1 45%;
+      max-width: 45%;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
 
-    /* The panel’s bottom padding already creates space under the button */
+    /* Bigger icons for better visibility */
+    #cs-section .icon i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Visible text with proper wrapping */
+    #cs-section .icon small {
+      font: 500 0.95rem var(--bd);
+      margin-top: 0.5rem;
+      line-height: 1.3;
+      word-wrap: normal;
+      hyphens: none;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    /* The panel's bottom padding already creates space under the button */
     #cs-section .panel {
       padding-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* ── MOBILE OVERRIDE FOR BUTTON ── */
     #cs-section .btn {
-      display: block;
-      width: 80%;
-      max-width: 250px;
-      margin: 2rem auto 0;            /* only top margin; bottom space comes from panel padding */
-      padding: 1rem 2rem;
-      font-size: 1rem;
+      width: auto;
+      max-width: 200px;
+      margin-top: 2rem;
+      margin-bottom: 0;
+      padding: 0.9rem 1.5rem;
+      font-size: 0.95rem;
+      text-align: center;
+      align-self: center;
+    }
+
+    /* Scale down header & paragraph slightly on small screens */
+    #cs-section h2 {
+      font: 700 clamp(2rem, 8vw, 3.2rem)/1.2 var(--hd);
+    }
+    #cs-section p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+    }
+  }
+
+  @media (max-width: 400px) {
+    /* For very small screens, stack vertically to prevent text cutoff */
+    #cs-section .icon-grid {
+      gap: 1.5rem;
+      justify-content: center;
+      padding: 0 1rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    #cs-section .icon {
+      flex: none;
+      max-width: 200px;
+      width: 100%;
+      min-height: auto;
+    }
+    
+        #cs-section .icon i {
+      font-size: 2.2rem;
+    }
+
+    #cs-section .icon small {
+      font-size: 1.1rem;
+      line-height: 1.4;
+      white-space: normal;
+      text-overflow: clip;
+      overflow: visible;
     }
   }
 
@@ -180,15 +253,6 @@
     to {
       opacity: 1;
     }
-  }
-
-  /* ─── [ NEW: force zero space below entire section ] ─── */
-  #cs-section {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  #cs-section .panel {
-    margin-bottom: 0 !important;
   }
 </style>
 
