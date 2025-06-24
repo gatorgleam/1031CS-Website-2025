@@ -1,236 +1,143 @@
-<!--
-  === Deferred Sales Trusts Section (Styled to Match Advisory Services Layout) ===
-  All DST content/context remains; styling now mirrors the Advisory Services section.
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deferred Sales Trusts</title>
-  <style>
-    /* 1. Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-    /* 2. Color Variables */
-    :root {
-      --color-primary: #002B45;       /* Dark Navy */
-      --color-accent:  #A48D29;       /* Soft Gold */
-      --color-text:    #26344e;       /* Dark Slate */
-      --color-bg:      #ffffff;       /* Pure White */
-      --color-disclaimer: #b4953e;    /* Gold-tone for disclaimers */
-      --shadow-base:   rgba(0, 43, 69, 0.03); /* Light navy shadow */
+<style>
+  .reit-scope {
+    font-family: 'Montserrat', sans-serif;
+    color: #26344e;
+    background: #ffffff;
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reit-scope h1,
+  .reit-scope h2 {
+    color: #002B45;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .reit-scope h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .reit-scope h2 {
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+  }
+  .reit-scope > p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reit-scope .box {
+    background: #f7f6f3;
+    border-radius: 16px;
+    padding: 1.7rem 1.5rem 1rem;
+    margin: 2rem auto 1rem auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    text-align: left;
+  }
+  .reit-scope .box ul,
+  .reit-scope .box ol {
+    padding-left: 1.5rem;
+    margin: 0 auto 1.5rem;
+    max-width: 700px;
+    text-align: left;
+  }
+  .reit-scope .box ul li,
+  .reit-scope .box ol li {
+    margin-bottom: 0.6rem;
+  }
+  .reit-scope .disclaimer {
+    font-size: 0.95rem;
+    color: #b4953e;
+    border-left: 4px solid #A48D29;
+    padding-left: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    font-style: italic;
+    text-align: center;
+  }
+  .reit-scope .disclaimer:last-of-type {
+    border-left: none;
+  }
+  @media (max-width: 700px) {
+    .reit-scope {
+      padding: 2rem 1rem;
     }
+    .reit-scope h1 {
+      font-size: 1.4rem;
+    }
+    .reit-scope h2 {
+      font-size: 1.1rem;
+    }
+    .reit-scope > p,
+    .reit-scope .disclaimer {
+      font-size: 0.97rem;
+    }
+    .reit-scope .box ul li,
+    .reit-scope .box ol li {
+      font-size: 0.97rem;
+    }
+  }
+</style>
 
-    /* 3. Scope all rules under .custom-advisory-container */
-    .custom-advisory-container,
-    .custom-advisory-container * {
-      font-family: 'Montserrat', Arial, sans-serif !important;
-      box-sizing: border-box;
-      color: var(--color-text);
-    }
+<div class="reit-scope">
+  <h1>Deferred Sales Trusts</h1>
 
-    /* 4. Base reset for elements inside the container */
-    .custom-advisory-container {
-      margin: 0;
-      padding: 0;
-    }
-    .custom-advisory-container a {
-      text-decoration: none;
-    }
+  <p>A Deferred Sales Trust is a financial strategy used to defer (but not avoid) capital gains taxes when selling highly appreciated assets such as businesses or stocks. Unlike a 1031 exchange, which is limited to real estate, a DST can be used for a broader range of assets and provides greater flexibility in how and when the proceeds are reinvested.</p>
 
-    /* 5. Section Card (Full-Width Background) */
-    .custom-advisory-container .section-card {
-      width: 100%;
-      margin: 0;
-      background: var(--color-bg);
-      border-radius: 20px;
-      box-shadow: 0 2px 14px var(--shadow-base);
-      padding: 2.7rem 0 3rem;
-      scroll-margin-top: 86px;
-      text-align: center;
-    }
-    .custom-advisory-container .section-card > * {
-      max-width: 850px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* 6. Typography: Titles & Headings */
-    .custom-advisory-container .title-lg {
-      font-size: 2.05rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-primary);
-      margin-top: 0.1rem;
-      margin-bottom: 0.8rem;
-      text-align: center;
-    }
-    .custom-advisory-container .accent-bar {
-      display: block;
-      height: 4px;
-      width: 64px;
-      background: var(--color-accent);
-      border-radius: 8px;
-      margin: 0 auto 2.2rem auto;
-    }
-    .custom-advisory-container .heading-2 {
-      font-size: 1.19rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-primary);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    /* 7. Paragraphs & Lists */
-    .custom-advisory-container .section-content p,
-    .custom-advisory-container .section-content ul,
-    .custom-advisory-container .section-content ol {
-      font-size: 1.01rem;
-      color: var(--color-text);
-      line-height: 1.75;
-      margin: 0.7em auto 1.1em auto;
-      text-align: center;
-    }
-    .custom-advisory-container .section-content ul,
-    .custom-advisory-container .section-content ol {
-      list-style: disc inside;
-      padding: 0;
-      margin: 0.5em auto 1.4em auto;
-      display: table; /* keeps the list block centered */
-    }
-    .custom-advisory-container .section-content li {
-      margin-bottom: 0.6em;
-      text-align: left; /* aligns all bullet text neatly */
-    }
-
-    /* 8. Call-To-Action Button */
-    .custom-advisory-container .btn-cta {
-      display: inline-block;
-      background: var(--color-accent);
-      color: var(--color-primary) !important;
-      font-size: 1.13rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 999px;
-      padding: 1.2em 2.5em;
-      margin: 2.2rem auto 1.2rem auto;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      text-align: center;
-              box-shadow: 0 2px 8px rgba(164, 141, 41, 0.15);
-      width: 100%;
-      max-width: 420px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .custom-advisory-container .btn-cta:hover,
-    .custom-advisory-container .btn-cta:focus {
-      background: var(--color-primary);
-      color: var(--color-bg) !important;
-    }
-
-    /* 9. Disclaimer & Fine Print (Not used here but kept for consistency) */
-    .custom-advisory-container .disclaimer {
-      font-size: 0.93em;
-      background: none;
-      border-left: 4px solid var(--color-accent);
-      padding: 0.65em 1em;
-      margin: 1.6em auto 1.2em auto;
-      width: 100%;
-      max-width: 850px;
-      color: var(--color-disclaimer);
-      font-style: italic;
-      text-align: center;
-      opacity: 0.87;
-    }
-
-    /* 10. Responsive Adjustments */
-    @media (max-width: 700px) {
-      .custom-advisory-container .section-card {
-        padding: 1.2rem 0 1.6rem;
-      }
-      .custom-advisory-container .title-lg {
-        font-size: 1.19rem;
-      }
-      .custom-advisory-container .heading-2 {
-        font-size: 0.97rem;
-      }
-      .custom-advisory-container .section-content p,
-      .custom-advisory-container .section-content ul,
-      .custom-advisory-container .section-content ol {
-        font-size: 0.97rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Wrapping container to isolate DST styles -->
-  <div class="custom-advisory-container">
-    <!-- Deferred Sales Trusts Section -->
-    <section class="section-card" id="deferred-sales-trusts">
-      <!-- Title + Accent Bar -->
-      <h2 class="title-lg">Deferred Sales Trusts</h2>
-      <span class="accent-bar"></span>
-
-      <!-- Main Content -->
-      <div class="section-content">
-        <!-- Intro Paragraph -->
-        <p>
-          <strong>A Deferred Sales Trust</strong> is a financial strategy used to defer (but not avoid) capital gains taxes when selling highly appreciated assets such as businesses or stocks. Unlike a 1031 exchange, which is limited to real estate, a DST can be used for a broader range of assets and provides greater flexibility in how and when the proceeds are reinvested.
-        </p>
-
-        <!-- How It Works -->
-        <h3 class="heading-2">How It Works</h3>
-        <p>
-          At the core of a Deferred Sales Trust is the use of a third-party trust to facilitate the sale of an appreciated asset. Here's the general process:
-        </p>
-        <ul>
-          <li><strong>Pre-Sale Transfer:</strong> Before a sale occurs, the seller transfers the appreciated asset to the trust (the DST).</li>
-          <li><strong>Trust Sells Asset:</strong> The DST then sells the asset to the intended buyer. Because the trust, not the original owner, executes the sale, the capital gains tax is not immediately triggered.</li>
-          <li><strong>Installment Note Issued:</strong> In exchange for the asset, the seller receives an installment note (promissory note) from the trust, promising to pay the seller over time.</li>
-          <li><strong>Tax Deferral:</strong> Payments to the seller are structured over a period of years, and taxes are only due as principal is received. This spreads out the tax liability and allows the invested proceeds to potentially grow before taxes are paid.</li>
-        </ul>
-
-        <!-- Key Benefits -->
-        <h3 class="heading-2">Key Benefits</h3>
-        <ul>
-          <li><strong>Capital Gains Tax Deferral:</strong> By receiving installment payments rather than a lump sum, the seller can delay the recognition of capital gains, potentially for many years.</li>
-          <li><strong>Diversification &amp; Liquidity:</strong> Unlike a 1031 exchange, which requires reinvestment in like-kind real estate, DST proceeds can be reinvested in a diversified portfolio including stocks, bonds, mutual funds, or REITs.</li>
-          <li><strong>Estate Planning Tool:</strong> DSTs can be integrated with estate planning strategies, reducing estate tax exposure and offering a way to pass on wealth with more favorable tax treatment.</li>
-          <li><strong>Flexibility:</strong> Payment terms, investment strategies, and trust structure can be customized to suit the seller's risk tolerance, income needs, and tax objectives.</li>
-        </ul>
-
-        <!-- Use Cases -->
-        <h3 class="heading-2">Use Cases</h3>
-        <ul>
-          <li>Business owners selling a closely held business.</li>
-          <li>Real estate investors exiting property holdings without a 1031 exchange.</li>
-          <li>Individuals selling highly appreciated stocks or collectibles.</li>
-          <li>Retirees looking to generate a predictable income stream from a sale.</li>
-        </ul>
-
-        <!-- Limitations & Considerations -->
-        <h3 class="heading-2">Limitations &amp; Considerations</h3>
-        <ul>
-          <li><strong>IRS Scrutiny:</strong> Although based on IRC Section 453 regarding installment sales, DST is less directly codified than a 1031 exchange, and improper setup may risk IRS challenge.</li>
-          <li><strong>Setup &amp; Maintenance Costs:</strong> Establishing a DST involves legal, trustee, and advisory fees, plus ongoing administration. Typically cost-effective for gains exceeding $500,000.</li>
-          <li><strong>Trustee Role:</strong> Must be administered by an independent third-party trustee; the seller cannot control trust assets to maintain deferral benefit.</li>
-          <li><strong>No Immediate Access:</strong> Seller relinquishes ownership of proceeds in exchange for a promissory note and cannot demand immediate access to the full amount.</li>
-        </ul>
-      </div>
-
-      <!-- Call-to-Action Button -->
-      <a href="https://meetings.hubspot.com/jason-mcmurtry/website-round-robin-meeting-url?__hstc=107973853.62b9aa5da72381aeebc788df85625a4f.1748375479813.1749136046381.1749143776048.26&__hssc=107973853.1.1749143776048&__hsfp=1568139861&uuid=8d91ec76-09dc-4003-88b8-eea2535b8a4f"
-         class="btn-cta">
-        Speak with an Advisor
-      </a>
-    </section>
+  <h2>How It Works</h2>
+  <div class="box">
+    <ol>
+      <li><strong>Pre-Sale Transfer:</strong> Before a sale occurs, the seller transfers the appreciated asset to the trust (the DST).</li>
+      <li><strong>Trust Sells Asset:</strong> The DST then sells the asset to the intended buyer. Because the trust, not the original owner, executes the sale, the capital gains tax is not immediately triggered.</li>
+      <li><strong>Installment Note Issued:</strong> In exchange for the asset, the seller receives an installment note (also known as a promissory note) from the trust, promising to pay the seller over time.</li>
+      <li><strong>Tax Deferral:</strong> Payments to the seller are structured over a period of years, and taxes are only due as principal is received. This spreads out the tax liability and allows the invested proceeds to potentially grow before taxes are paid.</li>
+    </ol>
   </div>
-</body>
-</html>
+
+  <h2>Key Benefits</h2>
+  <div class="box">
+    <ol>
+      <li><strong>Capital Gains Tax Deferral:</strong> By receiving installment payments rather than a lump sum, the seller can delay the recognition of capital gains, potentially for many years.</li>
+      <li><strong>Diversification and Liquidity:</strong> Unlike a 1031 exchange, which requires reinvestment in “like-kind” real estate, DST proceeds can be reinvested in a diversified portfolio including stocks, bonds, mutual funds, or even real estate investment trusts (REITs).</li>
+      <li><strong>Estate Planning Tool:</strong> DSTs can be integrated with estate planning strategies, reducing estate tax exposure and offering a way to pass on wealth with more favorable tax treatment.</li>
+      <li><strong>Flexibility:</strong> The payment terms, investment strategies, and trust structure can be customized to suit the seller’s risk tolerance, income needs, and tax objectives.</li>
+    </ol>
+  </div>
+
+  <h2>Use Cases</h2>
+  <div class="box">
+    <ul>
+      <li>Business owners selling a closely held business.</li>
+      <li>Real estate investors looking to exit property holdings without engaging in a 1031 exchange.</li>
+      <li>Individuals selling highly appreciated stocks or collectibles.</li>
+      <li>Retirees looking to generate a predictable income stream from a sale.</li>
+    </ul>
+  </div>
+
+  <h2>Limitations and Considerations</h2>
+  <div class="box">
+    <ul>
+      <li><strong>IRS Scrutiny:</strong> Although the DST strategy relies on established tax principles (especially IRC Section 453 regarding installment sales), it is less directly codified than a 1031 exchange, and improper setup may risk IRS challenge.</li>
+      <li><strong>Setup and Maintenance Costs:</strong> Establishing a DST involves legal, trustee, and advisory fees, and ongoing administration costs. It is typically only cost-effective for gains exceeding $500,000.</li>
+      <li><strong>Trustee Role:</strong> The trust must be administered by an independent third-party trustee, and the seller cannot have control over trust assets to maintain the tax-deferral benefit.</li>
+      <li><strong>No Immediate Access to Funds:</strong> The seller gives up ownership of the sale proceeds in exchange for a promissory note, and cannot demand immediate access to the full amount.</li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    This is for informational purposes only and does not constitute an offer to purchase or sell securitized real estate investments. A Deferred Sales Trust is a complex strategy that should be carefully evaluated with qualified tax and legal professionals. There are material risks associated with such arrangements including tax law changes, trust administration issues, and investment risks.
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>1031 Capital Solutions</strong><br>
+    Securities offered through Concorde Investment Services, LLC (CIS), member FINRA/SIPC. Advisory services through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser. 1031 Capital Solutions is independent of CIS and CAM.</p>
+  </div>
+</div>
