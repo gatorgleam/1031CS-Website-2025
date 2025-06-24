@@ -1,400 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QOZ Funds</title>
-</head>
-<body>
-  <div class="qoz-scope">
-    <style>
-      .qoz-scope {
-        --color-primary: var(--cs-primary);
-        --color-accent: var(--cs-accent);
-        --color-text: var(--cs-text);
-        --color-bg: transparent;
-        --color-disclaimer: var(--cs-disclaimer);
-        --shadow-base: var(--cs-shadow-base);
-        font-family: 'Montserrat', Arial, sans-serif !important;
-        background: transparent;
-      }
-      .qoz-scope *, .qoz-scope *::before, .qoz-scope *::after {
-        font-family: inherit !important;
-        box-sizing: border-box;
-        color: var(--color-text);
-      }
-      .qoz-scope a { text-decoration: none; }
-  
-      /* Remove navigation bar styles */
-      .qoz-scope .navbar {
-        display: none;
-      }
-  
-      /* Section Card */
-      .qoz-scope .section-card {
-        width: 100%;
-        margin: 0 auto 0 auto;
-        background: transparent;
-        border-radius: 20px;
-        box-shadow: none;
-        padding: 2.7rem 0 3rem;
-        scroll-margin-top: 90px;
-        text-align: center;
-        position: relative;
-        z-index: 10;
-        max-width: 1200px;
-      }
-      .qoz-scope .section-card > * {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .qoz-scope .title-lg {
-        font-size: 1.6rem !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.12em !important;
-        color: var(--color-primary) !important;
-        margin-top: 0.1rem !important;
-        margin-bottom: 1.2rem !important;
-        text-align: center !important;
-        line-height: 1.3 !important;
-        width: 100% !important;
-        max-width: 1200px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding: 0 20px !important;
-      }
-      .qoz-scope .accent-bar {
-        display: block;
-        height: 4px;
-        width: 64px;
-        background: var(--color-accent);
-        border-radius: 8px;
-        margin: 0 auto 2.2rem auto;
-      }
-      .qoz-scope .heading-2 {
-        font-size: 1.1rem !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.06em !important;
-        color: var(--color-primary) !important;
-        margin-top: 2.5rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        line-height: 1.3 !important;
-      }
-      .qoz-scope .heading-3 {
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.04em !important;
-        color: var(--color-primary) !important;
-        margin-top: 2rem !important;
-        margin-bottom: 0.8rem !important;
-        text-align: center !important;
-        line-height: 1.3 !important;
-      }
-      .qoz-scope .section-content p,
-      .qoz-scope .section-content ul,
-      .qoz-scope .section-content ol {
-        font-size: 0.95rem !important;
-        color: var(--color-text) !important;
-        line-height: 1.75 !important;
-        margin: 0.7em auto 1.1em auto !important;
-        text-align: left !important;
-        max-width: 900px !important;
-        padding: 0 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-      .qoz-scope .section-content ul,
-      .qoz-scope .section-content ol {
-        list-style-type: none !important;
-        text-align: center !important;
-        padding: 0 !important;
-        margin: 0.5em auto 1.4em auto !important;
-        max-width: 800px !important;
-        display: inline-block !important;
-      }
-      .qoz-scope .section-content li {
-        position: relative !important;
-        margin-bottom: 0.8em !important;
-        padding-left: 1.5em !important;
-        text-align: left !important;
-        font-size: 0.95rem !important;
-        line-height: 1.75 !important;
-      }
-      .qoz-scope .section-content li::before {
-        content: "•" !important;
-        position: absolute !important;
-        left: 0 !important;
-        width: 1.5em !important;
-        text-align: center !important;
-      }
-      .qoz-scope .section-content li strong {
-        color: var(--color-primary) !important;
-        font-size: 0.95rem !important;
-        font-weight: 700 !important;
-        display: inline !important;
-      }
-      .qoz-scope .disclaimer {
-        font-size: 0.85rem !important;
-        background: none !important;
-        border-left: 4px solid var(--color-accent) !important;
-        padding: 0.8em 1.2em !important;
-        margin: 1.6em auto 1.2em auto !important;
-        width: 100% !important;
-        max-width: 1200px !important;
-        color: var(--color-disclaimer) !important;
-        font-style: italic !important;
-        text-align: center !important;
-        opacity: 0.87 !important;
-        line-height: 1.6 !important;
-      }
-      .qoz-scope .img-spacer-medium { width: 100%; height: 32px; margin: 1.2rem auto; }
-      .qoz-scope .section-content {
-        text-align: center !important;
-        width: 100% !important;
-        padding: 0 20px !important;
-      }
-      .qoz-scope .section-content p {
-        text-align: center !important;
-      }
-      @media (max-width: 768px) {
-        .qoz-scope .title-lg {
-          font-size: 1.1rem !important;
-          padding: 0 20px !important;
-        }
-        .qoz-scope .heading-2 {
-          font-size: 1rem !important;
-          padding: 0 20px !important;
-        }
-        .qoz-scope .heading-3 {
-          font-size: 0.95rem !important;
-          padding: 0 20px !important;
-        }
-        .qoz-scope .section-content p,
-        .qoz-scope .section-content ul,
-        .qoz-scope .section-content ol,
-        .qoz-scope .section-content li,
-        .qoz-scope .section-content li strong {
-          font-size: 0.9rem !important;
-          padding: 0 20px !important;
-        }
-        .qoz-scope .disclaimer {
-          font-size: 0.85rem !important;
-          padding: 0.8em 1.2em !important;
-          margin: 1.5em 15px !important;
-        }
-      }
-    </style>
-  
-    <!-- Remove navigation bar HTML -->
-    
-    <!-- Section: Overview -->
-    <section id="qoz-overview" class="section-card">
-      <h1 class="title-lg">Guide to Securitized Real Estate Investments</h1>
-      <span class="accent-bar"></span>
-      <div class="section-content">
-        <p>
-          A Qualified Opportunity Zone (QOZ) fund is structured as an LP, LLC, or REIT that invests in properties located within federally designated Qualified Opportunity Zones (QOZs).
-          Under the "Invest in Opportunities Act" of 2017, QOZs are census tracts identified by the U.S. government to promote economic development and offer certain federal tax incentives.
-          As of April 2022, there are over 8,700 QOZs across the United States.
-        </p>
-        <p>
-          Most QOZ funds generate little to no operating income during the initial years, since development and construction projects often sit at the higher end of the real estate risk–reward spectrum.
-          However, this dynamic also means QOZ funds can potentially offer higher total returns compared to other non-traded alternative investments.
-          Typical equity offerings for individual QOZ funds range from $100 million to $500 million.
-          In some programs, the fund plans to refinance completed projects and provide partial liquidity to investors for the purpose of paying deferred federal capital gains taxes.
-        </p>
-        <p>
-          QOZ funds are offered as private placements and generally aggregate capital from accredited investors to acquire and complete developments or revitalization projects in designated zones.
-          Most funds include multiple projects across different zones; some have contractually secured all projects before launching their offering, while others secure certain projects only after raising capital.
-        </p>
-      </div>
-    </section>
-  
-    <!-- Section: Zone Designation -->
-    <section id="qoz-designation" class="section-card">
-      <h2 class="heading-2">QOZ Zone Designation</h2>
-      <span class="accent-bar"></span>
-      <div class="section-content">
-        <p>
-          To determine which census tracts qualified as Opportunity Zones, government officials applied QOZ criteria in 2018 to 2010 census data—at a time when many tracts had not yet recovered from the Great Recession.
-          Had 2018 data been used, many of these tracts might not have met the income thresholds required for designation. As a result, certain projects located in designated zones may have proceeded irrespective of zone boundaries, driven by underlying demand and demographic trends.
-        </p>
-        <ul>
-          <li>
-            Designation Authority: Zones were identified based on 2010 census statistics under the Invest in Opportunities Act of 2017.
-          </li>
-          <li>
-            Number of Zones: Over 8,700 census tracts across U.S. states and territories were designated as QOZs as of April 2022.
-          </li>
-          <li>
-            Zone Criteria: Qualified tracts generally exhibited lower-than-threshold median income or were adjacent to such areas.
-          </li>
-          <li>
-            Potential for Revitalization: The goal is to spur private capital toward historically underserved communities to encourage new development.
-          </li>
-        </ul>
-      </div>
-    </section>
-  
-    <!-- Section: Fund Structure & Characteristics -->
-    <section id="qoz-structure" class="section-card">
-      <h2 class="heading-2">Fund Structure & Characteristics</h2>
-      <span class="accent-bar"></span>
-      <div class="section-content">
-        <p>
-          QOZ funds typically have no operating history prior to offering. Interests are sold under exemptions from federal and state registration provisions, which means fund interests are subject to transfer restrictions.
-          Because these funds rely on private placements, there is no guarantee the fund's investment objectives will be met, and investors should expect a long-term commitment—often a minimum of 10 years—to fully realize the tax benefits.
-        </p>
-        <p>
-          Key structural points:
-        </p>
-        <ul>
-          <li>
-            Entity Types: Structured as Limited Partnerships (LPs), Limited Liability Companies (LLCs), or Real Estate Investment Trusts (REITs).
-          </li>
-          <li>
-            Capital Aggregation: Pools equity capital—often $100–$500 million per fund—from accredited investors to finance multiple development or redevelopment projects within designated zones.
-          </li>
-          <li>
-            Project Diversification: Most funds include several projects across different Opportunity Zones to mitigate concentration risk.
-          </li>
-          <li>
-            Operating History: Very few QOZ funds have any prior track record; all underwriting is forward-looking and based on projected development timelines.
-          </li>
-          <li>
-            Liquidity Plan: Some funds intend to refinance stabilized properties and distribute partial liquidity to investors to help cover deferred taxes.
-          </li>
-        </ul>
-        <p>
-          Since management teams of QOZ funds often negotiate construction loans, development budgets, and eventual refinancing in parallel, execution risk can be higher than in stabilized real estate offerings.
-        </p>
-      </div>
-    </section>
-  
-    <!-- Section: Risks & Compliance -->
-    <section id="qoz-risks" class="section-card">
-      <h2 class="heading-2">Risks & Compliance</h2>
-      <span class="accent-bar"></span>
-      <div class="section-content">
-        <p>
-          Investment in a QOZ fund carries multiple risk factors, including—but not limited to—the following:
-        </p>
-        <h3 class="heading-3">Regulatory & Tax Qualification Risks</h3>
-        <ul>
-          <li>
-            <strong>Qualification Under Code Section 1400Z-2:</strong> A QOZ fund must comply with a variety of IRS requirements—such as the 90% Test (minimum percentage of assets located in qualified zones), the "original use" requirement, and the working capital safe harbor—to maintain its qualification. Failure in any area may jeopardize the entire fund's tax status.
-          </li>
-          <li>
-            <strong>Changing Tax Laws:</strong> Future legislative changes could adversely affect the tax incentives that drive the Opportunity Zone program.
-          </li>
-          <li>
-            <strong>IRS Audits:</strong> The fund's tax returns may be audited, and the IRS could challenge deductions or reclassify assets, which could delay or eliminate projected tax benefits.
-          </li>
-        </ul>
-        <h3 class="heading-3">Operational & Development Risks</h3>
-        <ul>
-          <li>
-            <strong>No Guarantee of Acquisitions:</strong> There is no assurance that the fund will complete all identified acquisition targets, which may impact projected returns.
-          </li>
-          <li>
-            <strong>Environmental & Permitting:</strong> Property acquisitions are subject to environmental due diligence and remediation, which can delay timelines or increase costs. Unexpected environmental liabilities can negatively affect project design and feasibility.
-          </li>
-          <li>
-            <strong>Construction & Stabilization:</strong> Development projects in Opportunity Zones can face construction delays, cost overruns, or inability to secure tenants, which postpones any distributions to investors.
-          </li>
-          <li>
-            <strong>Market Conditions:</strong> Disruptions in financial markets, rising interest rates, or broader economic downturns can reduce demand for new developments and adversely affect rental rates or capital raising efforts.
-          </li>
-        </ul>
-        <h3 class="heading-3">Management & Governance Risks</h3>
-        <ul>
-          <li>
-            <strong>Reliance on Key Personnel:</strong> The success of a QOZ fund depends heavily on the skill and experience of its General Partner, principals, and development teams. There is no requirement that these individuals devote full time to the fund's operations.
-          </li>
-          <li>
-            <strong>Limited Investor Control:</strong> Investors have no say in day-to-day operations, asset management, or disposition decisions; all investment decisions rest with the fund's management team.
-          </li>
-          <li>
-            <strong>Compensation Structure:</strong> If organized as a limited partnership, the General Partner and its affiliates may receive management fees, acquisition fees, promote interests, and other compensation regardless of whether distributions are made to limited partners.
-          </li>
-        </ul>
-      </div>
-    </section>
-  
-    <!-- Section: Contact & Disclaimers -->
-    <section id="qoz-contact" class="section-card">
-      <h2 class="heading-2">Investor Requirements, Tax Benefits & Contact</h2>
-      <span class="accent-bar"></span>
-      <div class="section-content">
-        <p>
-          To take advantage of the Opportunity Zone tax incentives, prospective investors must generally meet the following criteria:
-        </p>
-        <ul>
-          <li>
-            <strong>Accredited Investor Status:</strong> Most QOZ fund offerings are available only to accredited investors, as defined by Regulation D—individuals with an annual income exceeding $200,000 (or $300,000 combined with a spouse) in each of the last two years, or a net worth of over $1 million excluding primary residence.
-          </li>
-          <li>
-            <strong>Eligible Gain Reinvestment:</strong> Investors must reinvest cash equal to their "Eligible Gain" (typically treated as capital gain for U.S. federal income tax purposes) into a QOZ fund within 180 days of the sale or exchange that generated such gain. Certain gain types—such as REIT capital gain dividends, Code Section 1231 gain, or Code Section 1256 contracts—may have different start dates for the 180-day window.
-          </li>
-          <li>
-            <strong>Long-Term Commitment:</strong> Investors should be prepared for a 10-year minimum holding period to fully realize all tax benefits. Early redemptions are generally prohibited and secondary market liquidity is extremely limited.
-          </li>
-          <li>
-            <strong>State Tax Considerations:</strong> Some states, including California, have chosen not to conform to federal QOZ tax rules. Residents may defer federal capital gains tax but could be required to pay state capital gains taxes in the year of the original sale.
-          </li>
-        </ul>
-        <p>
-          QOZ rules allow taxpayers to sell any appreciated asset that would otherwise trigger a capital gain and defer the related federal capital gains tax by reinvesting those gains into a QOZ fund—unlike a 1031 exchange, which requires reinvestment into a similar asset to fully defer taxes.
-          Reinvestment into a QOZ fund must occur within 180 days of the transaction that generated the eligible gain. Once invested, three distinct federal tax benefits may apply:
-        </p>
-        <ol>
-          <li>
-            <strong>Temporary Deferral:</strong> Capital gains tax on the original deferred gain is deferred until the earlier of the date on which the QOZ fund investment is sold or exchanged, or December 31, 2026. (Note: that date may be extended by future legislation.)
-          </li>
-          <li>
-            <strong>Step-Up in Basis:</strong> If the investor holds the QOZ fund investment for at least five years, the basis of the original deferred gain is increased by 10%. For investments made before December 31, 2021, an effective 10% discount on deferred federal capital gains tax was available—subject to legislative timelines.
-          </li>
-          <li>
-            <strong>Exclusion of Appreciation:</strong> If the investor holds the QOZ fund investment for a minimum of 10 years, any appreciation in the QOZ fund investment itself is excluded from federal capital gains tax.
-          </li>
-        </ol>
-        <p>
-          <strong>Illustrative Timeline Example:</strong>
-        </p>
-        <div class="img-spacer-medium"></div>
-        <p>
-          <em>Example:</em> An asset is sold in 2020 generating capital gains and those gains are reinvested into a QOZ fund in the same year:
-        </p>
-        <ul>
-          <li>
-            <strong>2020:</strong> Asset sale; capital gains recognized. Reinvestment into QOZ fund. Federal capital gains tax on deferred portion is pushed out.
-          </li>
-          <li>
-            <strong>2021–2024:</strong> Deferred gain basis gradually steps up by 10% if the investor holds the fund investment for at least 5 years (assuming investment made prior to end of 2021).
-          </li>
-          <li>
-            <strong>December 31, 2026:</strong> Deferred capital gains on the original sale are recognized, and taxes are due on the portion not stepped up. Any remaining deferred gain basis is applied.
-          </li>
-          <li>
-            <strong>2030 (10-year mark):</strong> If the investor has held the QOZ fund investment for a full 10 years, any further appreciation in the QOZ fund is excluded from federal capital gains tax.
-          </li>
-        </ul>
-        <p class="disclaimer">
-          Securities offered through Concorde Investment Services, LLC (CIS), Member FINRA/SIPC.
-          Advisory services offered through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser.
-          1031 Capital Solutions is independent of CIS and CAM.
-        </p>
-        <p class="disclaimer">
-          Nothing herein should be construed as tax or financial advice. Prospective investors should consult their own tax and legal advisors before making any investment decision. There is no guarantee that the fund's investment objectives will be achieved, and investments in QOZ funds are subject to substantial risks, including but not limited to qualification risks under Code Section 1400Z-2, development and environmental risks, market risks, and the potential loss of principal.
-        </p>
-      </div>
-    </section>
+<style>
+  .reit-scope {
+    font-family: 'Montserrat', sans-serif;
+    color: #26344e;
+    background: #ffffff;
+    padding: 3rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reit-scope h1,
+  .reit-scope h2 {
+    color: #002B45;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .reit-scope h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .reit-scope h2 {
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+  }
+  .reit-scope > p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reit-scope .divider {
+    width: 64px;
+    height: 4px;
+    background: #A48D29;
+    border-radius: 2px;
+    margin: 1.5rem auto;
+  }
+  .reit-scope .box {
+    background: #f7f6f3;
+    border-radius: 16px;
+    padding: 1.7rem 1.5rem 1rem;
+    margin: 2rem auto 1rem auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    text-align: left;
+  }
+  .reit-scope .box ul {
+    list-style-position: outside;
+    padding-left: 1.5rem;
+    margin: 0 auto 1.5rem;
+    max-width: 700px;
+  }
+  .reit-scope .box ul li {
+    margin-bottom: 0.8rem;
+  }
+  .reit-scope .img-spacer-medium {
+    width: 100%;
+    height: 32px;
+    margin: 1.2rem auto;
+  }
+  .reit-scope .disclaimer {
+    font-size: 0.85rem;
+    color: #b4953e;
+    border-left: 4px solid #A48D29;
+    padding: 0.8em 1.2em;
+    margin: 1.6em auto;
+    max-width: 800px;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.87;
+    line-height: 1.6;
+  }
+  @media (max-width: 700px) {
+    .reit-scope {
+      padding: 2rem 1rem;
+    }
+    .reit-scope h1 {
+      font-size: 1.4rem;
+    }
+    .reit-scope h2 {
+      font-size: 1.1rem;
+    }
+    .reit-scope > p,
+    .reit-scope .disclaimer {
+      font-size: 0.9rem;
+    }
+    .reit-scope .box ul li {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<div class="reit-scope">
+  <!-- Overview -->
+  <h1>Guide to Securitized Real Estate Investments</h1>
+  <div class="divider"></div>
+  <p>
+    A Qualified Opportunity Zone (QOZ) fund is structured as an LP, LLC, or REIT that invests in properties located within federally designated Qualified Opportunity Zones (QOZs). Under the "Invest in Opportunities Act" of 2017, QOZs are census tracts identified by the U.S. government to promote economic development and offer certain federal tax incentives. As of April 2022, there are over 8,700 QOZs across the United States.
+  </p>
+  <p>
+    Most QOZ funds generate little to no operating income during the initial years, since development and construction projects often sit at the higher end of the real estate risk–reward spectrum. However, this dynamic also means QOZ funds can potentially offer higher total returns compared to other non-traded alternative investments. Typical equity offerings for individual QOZ funds range from $100 million to $500 million. In some programs, the fund plans to refinance completed projects and provide partial liquidity to investors for the purpose of paying deferred federal capital gains taxes.
+  </p>
+  <p>
+    QOZ funds are offered as private placements and generally aggregate capital from accredited investors to acquire and complete developments or revitalization projects in designated zones. Most funds include multiple projects across different zones; some have contractually secured all projects before launching their offering, while others secure certain projects only after raising capital.
+  </p>
+
+  <!-- Zone Designation -->
+  <h2>QOZ Zone Designation</h2>
+  <div class="divider"></div>
+  <p>
+    To determine which census tracts qualified as Opportunity Zones, government officials applied QOZ criteria in 2018 to 2010 census data—at a time when many tracts had not yet recovered from the Great Recession. Had 2018 data been used, many of these tracts might not have met the income thresholds required for designation. As a result, certain projects located in designated zones may have proceeded irrespective of zone boundaries, driven by underlying demand and demographic trends.
+  </p>
+  <div class="box">
+    <ul>
+      <li>Designation Authority: Zones were identified based on 2010 census statistics under the Invest in Opportunities Act of 2017.</li>
+      <li>Number of Zones: Over 8,700 census tracts across U.S. states and territories were designated as QOZs as of April 2022.</li>
+      <li>Zone Criteria: Qualified tracts generally exhibited lower-than-threshold median income or were adjacent to such areas.</li>
+      <li>Potential for Revitalization: The goal is to spur private capital toward historically underserved communities to encourage new development.</li>
+    </ul>
   </div>
-</body>
-</html>
-  
+
+  <!-- Fund Structure & Characteristics -->
+  <h2>Fund Structure &amp; Characteristics</h2>
+  <div class="divider"></div>
+  <p>
+    QOZ funds typically have no operating history prior to offering. Interests are sold under exemptions from federal and state registration provisions, which means fund interests are subject to transfer restrictions. Because these funds rely on private placements, there is no guarantee the fund's investment objectives will be met, and investors should expect a long-term commitment—often a minimum of 10 years—to fully realize the tax benefits.
+  </p>
+  <p>Key structural points:</p>
+  <div class="box">
+    <ul>
+      <li>Entity Types: Structured as Limited Partnerships (LPs), Limited Liability Companies (LLCs), or Real Estate Investment Trusts (REITs).</li>
+      <li>Capital Aggregation: Pools equity capital—often $100–$500 million per fund—from accredited investors to finance multiple development or redevelopment projects within designated zones.</li>
+      <li>Project Diversification: Most funds include several projects across different Opportunity Zones to mitigate concentration risk.</li>
+      <li>Operating History: Very few QOZ funds have any prior track record; all underwriting is forward-looking and based on projected development timelines.</li>
+      <li>Liquidity Plan: Some funds intend to refinance stabilized properties and distribute partial liquidity to investors to help cover deferred taxes.</li>
+    </ul>
+  </div>
+  <p>
+    Since management teams of QOZ funds often negotiate construction loans, development budgets, and eventual refinancing in parallel, execution risk can be higher than in stabilized real estate offerings.
+  </p>
+
+  <!-- Risks & Compliance -->
+  <h2>Risks &amp; Compliance</h2>
+  <div class="divider"></div>
+  <p>Investment in a QOZ fund carries multiple risk factors, including—but not limited to—the following:</p>
+  <h2>Regulatory &amp; Tax Qualification Risks</h2>
+  <div class="box">
+    <ul>
+      <li><strong>Qualification Under Code Section 1400Z-2:</strong> A QOZ fund must comply with a variety of IRS requirements—such as the 90% Test (minimum percentage of assets located in qualified zones), the "original use" requirement, and the working capital safe harbor—to maintain its qualification. Failure in any area may jeopardize the entire fund's tax status.</li>
+      <li><strong>Changing Tax Laws:</strong> Future legislative changes could adversely affect the tax incentives that drive the Opportunity Zone program.</li>
+      <li><strong>IRS Audits:</strong> The fund's tax returns may be audited, and the IRS could challenge deductions or reclassify assets, which could delay or eliminate projected tax benefits.</li>
+    </ul>
+  </div>
+  <h2>Operational &amp; Development Risks</h2>
+  <div class="box">
+    <ul>
+      <li><strong>No Guarantee of Acquisitions:</strong> There is no assurance that the fund will complete all identified acquisition targets, which may impact projected returns.</li>
+      <li><strong>Environmental &amp; Permitting:</strong> Property acquisitions are subject to environmental due diligence and remediation, which can delay timelines or increase costs. Unexpected environmental liabilities can negatively affect project design and feasibility.</li>
+      <li><strong>Construction &amp; Stabilization:</strong> Development projects in Opportunity Zones can face construction delays, cost overruns, or inability to secure tenants, which postpones any distributions to investors.</li>
+      <li><strong>Market Conditions:</strong> Disruptions in financial markets, rising interest rates, or broader economic downturns can reduce demand for new developments and adversely affect rental rates or capital raising efforts.</li>
+    </ul>
+  </div>
+  <h2>Management &amp; Governance Risks</h2>
+  <div class="box">
+    <ul>
+      <li><strong>Reliance on Key Personnel:</strong> The success of a QOZ fund depends heavily on the skill and experience of its General Partner, principals, and development teams. There is no requirement that these individuals devote full time to the fund's operations.</li>
+      <li><strong>Limited Investor Control:</strong> Investors have no say in day-to-day operations, asset management, or disposition decisions; all investment decisions rest with the fund's management team.</li>
+      <li><strong>Compensation Structure:</strong> If organized as a limited partnership, the General Partner and its affiliates may receive management fees, acquisition fees, promote interests, and other compensation regardless of whether distributions are made to limited partners.</li>
+    </ul>
+  </div>
+
+  <!-- Investor Requirements, Tax Benefits & Contact -->
+  <h2>Investor Requirements, Tax Benefits &amp; Contact</h2>
+  <div class="divider"></div>
+  <p>To take advantage of the Opportunity Zone tax incentives, prospective investors must generally meet the following criteria:</p>
+  <div class="box">
+    <ul>
+      <li><strong>Accredited Investor Status:</strong> Most QOZ fund offerings are available only to accredited investors, as defined by Regulation D—individuals with an annual income exceeding $200,000 (or $300,000 combined with a spouse) in each of the last two years, or a net worth of over $1 million excluding primary residence.</li>
+      <li><strong>Eligible Gain Reinvestment:</strong> Investors must reinvest cash equal to their "Eligible Gain" (typically treated as capital gain for U.S. federal income tax purposes) into a QOZ fund within 180 days of the sale or exchange that generated such gain. Certain gain types—such as REIT capital gain dividends, Code Section 1231 gain, or Code Section 1256 contracts—may have different start dates for the 180-day window.</li>
+      <li><strong>Long-Term Commitment:</strong> Investors should be prepared for a 10-year minimum holding period to fully realize all tax benefits. Early redemptions are generally prohibited and secondary market liquidity is extremely limited.</li>
+      <li><strong>State Tax Considerations:</strong> Some states, including California, have chosen not to conform to federal QOZ tax rules. Residents may defer federal capital gains tax but could be required to pay state capital gains taxes in the year of the original sale.</li>
+    </ul>
+  </div>
+  <p>
+    QOZ rules allow taxpayers to sell any appreciated asset that would otherwise trigger a capital gain and defer the related federal capital gains tax by reinvesting those gains into a QOZ fund—unlike a 1031 exchange, which requires reinvestment into a similar asset to fully defer taxes. Reinvestment into a QOZ fund must occur within 180 days of the transaction that generated the eligible gain. Once invested, three distinct federal tax benefits may apply:
+  </p>
+  <div class="box">
+    <ol>
+      <li><strong>Temporary Deferral:</strong> Capital gains tax on the original deferred gain is deferred until the earlier of the date on which the QOZ fund investment is sold or exchanged, or December 31, 2026. (Note: that date may be extended by future legislation.)</li>
+      <li><strong>Step-Up in Basis:</strong> If the investor holds the QOZ fund investment for at least five years, the basis of the original deferred gain is increased by 10%. For investments made before December 31, 2021, an effective 10% discount on deferred federal capital gains tax was available—subject to legislative timelines.</li>
+      <li><strong>Exclusion of Appreciation:</strong> If the investor holds the QOZ fund investment for a minimum of 10 years, any appreciation in the QOZ fund investment itself is excluded from federal capital gains tax.</li>
+    </ol>
+  </div>
+
+  <!-- Timeline Example -->
+  <h2>Illustrative Timeline Example</h2>
+  <div class="divider"></div>
+  <div class="img-spacer-medium"></div>
+  <p><em>Example:</em> An asset is sold in 2020 generating capital gains and those gains are reinvested into a QOZ fund in the same year:</p>
+  <div class="box">
+    <ul>
+      <li><strong>2020:</strong> Asset sale; capital gains recognized. Reinvestment into QOZ fund. Federal capital gains tax on deferred portion is pushed out.</li>
+      <li><strong>2021–2024:</strong> Deferred gain basis gradually steps up by 10% if the investor holds the fund investment for at least 5 years (assuming investment made prior to end of 2021).</li>
+      <li><strong>December 31, 2026:</strong> Deferred capital gains on the original sale are recognized, and taxes are due on the portion not stepped up. Any remaining deferred gain basis is applied.</li>
+      <li><strong>2030 (10-year mark):</strong> If the investor has held the QOZ fund investment for a full 10 years, any further appreciation in the QOZ fund is excluded from federal capital gains tax.</li>
+    </ul>
+  </div>
+
+  <!-- Disclaimers -->
+  <div class="disclaimer">
+    Securities offered through Concorde Investment Services, LLC (CIS), Member FINRA/SIPC. Advisory services offered through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser. 1031 Capital Solutions is independent of CIS and CAM.
+  </div>
+  <div class="disclaimer">
+    Nothing herein should be construed as tax or financial advice. Prospective investors should consult their own tax and legal advisors before making any investment decision. There is no guarantee that the fund's investment objectives will be achieved, and investments in QOZ funds are subject to substantial risks, including but not limited to qualification risks under Code Section 1400Z-2, development and environmental risks, market risks, and the potential loss of principal.
+  </div>
+</div>
