@@ -1,16 +1,17 @@
 <style>
-  /* Using global Inter font */
+  /* Import Montserrat from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
   /* Global Reset & Typography */
   html {
     scroll-behavior: smooth;
   }
   body, .dst-section * {
-    font-family: 'Inter', Arial, sans-serif !important;
+    font-family: 'Montserrat', Arial, sans-serif !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--cs-text);
+    color: #26344e;
     background: transparent;
   }
   a {
@@ -31,7 +32,7 @@
   }
   .dst-navbar a {
     font-weight: 700;
-    color: var(--cs-primary);
+    color: #002B45;
     font-size: 1.01rem;
     padding: 0.45em 1.25em;
     border-radius: 100px;
@@ -134,7 +135,7 @@
   /* CTAs */
   .dst-btn {
     display: inline-block;
-    background: #A48D29;
+    background: #C6A664;
     color: #002B45 !important;
     font-size: 1.13rem;
     font-weight: 700;
@@ -145,7 +146,7 @@
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(164, 141, 41, 0.15);
+    box-shadow: 0 2px 8px #C6A66425;
     width: 100%;
     max-width: 420px;
     letter-spacing: 0.05em;
@@ -161,7 +162,7 @@
   .dst-disclaimer {
     font-size: 0.93em;
     background: none;
-    border-left: 4px solid #A48D29;
+    border-left: 4px solid #C6A664;
     padding: 0.65em 1em;
     margin: 1.6em auto 1.2em auto;
     width: 100%;
@@ -244,7 +245,7 @@
   }
   .reit-scope {
     --color-navy: #002B45;
-    --color-gold: #A48D29;
+    --color-gold: #C6A664;
     --color-slate: #26344e;
     --color-soft: #f7f6f3;
     --color-disclaimer: #b4953e;
