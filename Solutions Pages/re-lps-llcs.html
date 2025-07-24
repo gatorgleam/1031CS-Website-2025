@@ -38,27 +38,25 @@
     margin: 2rem auto;
   }
 
-  /* Flex container for three equal boxes */
+  /* use CSS Grid to equalize box heights */
   .reit-scope .box-row {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin: 3rem 0;
-    align-items: stretch;
-    flex-wrap: wrap;
   }
   .reit-scope .box-col {
-    flex: 0 0 32%;
-    max-width: 32%;
     display: flex;
     flex-direction: column;
   }
   .reit-scope .box-col h2 {
     margin: 0 0 0.5rem;
     text-align: center;
-    font-size: 1rem; /* reduced font size */
+    font-size: 1rem;
     letter-spacing: 0.06em;
     line-height: 1.2;
+    /* reserve consistent heading space */
+    min-height: 2.4rem;
   }
 
   .reit-scope .box {
@@ -67,7 +65,7 @@
     padding: 2rem 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     text-align: left;
-    flex-grow: 1;
+    flex-grow: 1;          /* fill full height of the column */
     display: flex;
     flex-direction: column;
   }
@@ -114,17 +112,17 @@
     }
     .reit-scope h2 {
       font-size: 1.1rem;
+      min-height: 2.2rem;
     }
     .reit-scope > p,
     .reit-scope .disclaimer {
       font-size: 0.9rem;
     }
+    /* stack boxes on mobile */
     .reit-scope .box-row {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
     .reit-scope .box-col {
-      max-width: 100%;
-      flex: 1 1 100%;
       margin-bottom: 2rem;
     }
   }
