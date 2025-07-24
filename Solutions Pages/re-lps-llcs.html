@@ -1,172 +1,201 @@
 <style>
-    .reit-scope * {
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
+  .reit-scope {
+    font-family: 'Montserrat', sans-serif;
+    color: #26344e;
+    background: #ffffff;
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reit-scope h1,
+  .reit-scope h2 {
+    color: #002B45;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .reit-scope h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .reit-scope h2 {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+  }
+  .reit-scope > p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 auto 1.5rem;
+    max-width: 800px;
+  }
+  .reit-scope .divider {
+    width: 64px;
+    height: 4px;
+    background: #A48D29;
+    border-radius: 2px;
+    margin: 2rem auto;
+  }
+
+  /* use CSS Grid to equalize box heights */
+  .reit-scope .box-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+  .reit-scope .box-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .reit-scope .box-col h2 {
+    margin: 0 0 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    /* reserve consistent heading space */
+    min-height: 2.4rem;
+  }
+
+  .reit-scope .box {
+    background: #f7f6f3;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    flex-grow: 1;          /* fill full height of the column */
+    display: flex;
+    flex-direction: column;
+  }
+  .reit-scope .box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .reit-scope .box ul li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.8em;
+    line-height: 1.6;
+  }
+  .reit-scope .box ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #A48D29;
+    font-weight: bold;
+    top: 0.2em;
+  }
+
+  .reit-scope .disclaimer {
+    font-size: 0.85rem;
+    color: #b4953e;
+    border-left: 4px solid #A48D29;
+    padding: 1em 1.2em;
+    margin: 2rem auto;
+    max-width: 800px;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.87;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
     .reit-scope {
-      --color-navy: #002B45;
-      --color-gold: #C6A664;
-      --color-slate: #26344e;
-      --color-soft: #f7f6f3;
-      --color-disclaimer: #b4953e;
-      color: var(--color-slate);
-      text-align: center;
-      padding: 3rem 1rem;
-      background: #fff;
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 2rem 1rem;
     }
-  
-    .reit-scope h1,
-    .reit-scope h2,
-    .reit-scope h3 {
-      color: var(--color-navy);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-    }
-  
     .reit-scope h1 {
-      font-size: 2rem;
-      margin-top: 0;
+      font-size: 1.6rem;
     }
-  
     .reit-scope h2 {
-      font-size: 1.3rem;
-      margin-top: 2.5rem;
-    }
-  
-    .reit-scope h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.75rem;
+      min-height: 2.2rem;
     }
-  
-    .reit-scope p,
-    .reit-scope li {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-  
-    .reit-scope ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      text-align: left;
-      display: inline-block;
-      max-width: 700px;
-    }
-  
-    .reit-scope .divider {
-      width: 64px;
-      height: 4px;
-      background: var(--color-gold);
-      border-radius: 2px;
-      margin: 2rem auto;
-    }
-  
-    .reit-scope .box {
-      background: var(--color-soft);
-      border-radius: 16px;
-      padding: 1.7rem 1.5rem;
-      margin: 2rem auto;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      max-width: 700px;
-      text-align: left;
-    }
-  
-    .reit-scope .reit-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 2.5rem 0;
-    }
-  
-    .reit-scope .reit-col {
-      flex: 1 1 300px;
-      max-width: 400px;
-      background: var(--color-soft);
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-  
+    .reit-scope > p,
     .reit-scope .disclaimer {
-      font-size: 0.95rem;
-      color: var(--color-disclaimer);
-      border-left: 4px solid var(--color-gold);
-      padding-left: 1rem;
-      margin: 2rem auto;
-      max-width: 800px;
-      font-style: italic;
+      font-size: 0.9rem;
     }
-  
-    .reit-scope a {
-      color: var(--color-navy);
-      font-weight: bold;
+    /* stack boxes on mobile */
+    .reit-scope .box-row {
+      grid-template-columns: 1fr;
     }
-  </style>
-  
-  <div class="reit-scope">
-    <h1>Real Estate Investment Trusts (REITs)</h1>
-    <div class="divider"></div>
-  
-    <p>REITs allow individuals to invest in portfolios of large-scale, income-producing real estate while benefiting from pass-through tax advantages. They may own properties like apartments, warehouses, offices, or healthcare facilities—either diversified or niche-focused.</p>
-  
-    <h2>Structure & Requirements</h2>
-    <p>Originally created in the 1960s as business trusts, most REITs today are structured as limited partnerships with a publicly traded corporation acting as the general partner.</p>
-  
-    <div class="box">
-      <strong>To qualify as a REIT under IRS rules, a company must:</strong>
-      <ul>
-        <li>Invest almost exclusively in real estate</li>
-        <li>Distribute at least 90% of taxable income to shareholders annually</li>
-      </ul>
-    </div>
-  
-    <h2>Taxation</h2>
-    <p>REIT investors receive a 1099. Most distributions are taxed as ordinary income. Through December 31, 2025, taxpayers may deduct 20% of qualified business income.</p>
-    <p>REIT investors may also offset income via depreciation. While that reduces current tax liability, it also lowers cost basis and could trigger depreciation recapture upon sale—unless shares are inherited and receive a “step-up” in basis.</p>
-  
-    <h2>Traded vs Non-Traded REITs</h2>
-    <div class="reit-grid">
-      <div class="reit-col">
-        <h3>Traded REITs</h3>
+    .reit-scope .box-col {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
+
+<div class="reit-scope">
+  <h1>Real Estate LPs and LLCs</h1>
+  <div class="divider"></div>
+
+  <h2>Lease Structure and Cap Rates</h2>
+  <p>Unlike your home, investment properties trade at prices based primarily on capitalization rates ("cap rates")—the average net operating income ("NOI") that buyers expect to receive as a percentage of purchase price.</p>
+  <p>Cap rates for any type of property change over time, a function of three important variables: interest rates, available market capital and perceived operating risk. If a specific building maintains a flat NOI, its future value is entirely dependent on how these forces move the applicable cap rate for such a property.</p>
+  <p>If prevailing cap rates go up, a property's NOI must increase proportionally to maintain its value, notwithstanding transaction costs. To appreciate, NOI must outpace any upward trend in cap rates.</p>
+  <p>For properties with long-term leases and predetermined rental revenues, it may be algebraically impossible to achieve appreciation if cap rates rise. Investors should consider where to invest along the lease spectrum.</p>
+
+  <div class="box-row">
+    <div class="box-col">
+      <h2>Lease Duration Examples</h2>
+      <div class="box">
         <ul>
-          <li>Shares bought/sold on national exchanges</li>
-          <li>Daily liquidity with real-time pricing</li>
-          <li>Highly correlated to stock market performance</li>
-          <li>Subject to brokerage fees</li>
-        </ul>
-      </div>
-      <div class="reit-col">
-        <h3>Non-Traded REITs</h3>
-        <ul>
-          <li>Purchased directly from the issuer</li>
-          <li>Limited redemption via internal programs</li>
-          <li>Valued using periodic appraisals</li>
-          <li>Higher upfront & back-end fees</li>
+          <li>Hospitality</li>
+          <li>Self-Storage</li>
+          <li>Apartment Community</li>
+          <li>Senior Housing</li>
+          <li>Mid-Term, Multi-Tenant Lease</li>
+          <li>Long-Term, Multi-Tenant Lease</li>
+          <li>Long-Term, Single-Tenant Lease</li>
         </ul>
       </div>
     </div>
-  
-    <h2>Public vs Private Offerings</h2>
-    <p>Some REITs are registered with the SEC but not listed on public exchanges—such as mutual funds or non-traded REITs. Private REITs are unregistered and only available to accredited investors via a Private Placement Memorandum (PPM).</p>
-  
-    <h2>Helpful Resources</h2>
-    <ul>
-      <li><a href="https://www.irs.gov/newsroom/facts-about-the-qualified-business-income-deduction" target="_blank">IRS: Qualified Business Income Deduction</a></li>
-      <li><a href="https://www.nasaa.org/wp-content/uploads/2011/07/g-REITS.pdf" target="_blank">NASAA: REITs Overview</a></li>
-      <li><a href="https://www.sec.gov/oiea/investor-alerts-and-bulletins/private-placements-under-regulation-d-investor-bulletin" target="_blank">SEC: Private Placement Overview</a></li>
-    </ul>
-  
-    <div class="disclaimer">
-      This is for informational purposes only and does not constitute an offer to purchase or sell securitized real estate investments. Risks include illiquidity, general market volatility, financing, interest rate sensitivity, and loss of principal. Consult the sponsor's PPM for full risk disclosures.
+    <div class="box-col">
+      <h2>Investment Risks</h2>
+      <div class="box">
+        <ul>
+          <li>Operational risks</li>
+          <li>Leverage risks</li>
+          <li>Tax-law-change risks</li>
+          <li>Transaction risks</li>
+          <li>Tenant risks</li>
+          <li>Regulatory risks</li>
+          <li>Illiquidity</li>
+          <li>Fees and expenses</li>
+          <li>Macroeconomic risks</li>
+        </ul>
+      </div>
     </div>
-  
-    <div class="disclaimer" style="border-left: none;">
-      <p><strong>1031 Capital Solutions</strong><br>
-      Securities offered through Concorde Investment Services, LLC (CIS), member FINRA/SIPC. Advisory services through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser. 1031 Capital Solutions is independent of CIS and CAM.</p>
+    <div class="box-col">
+      <h2>Common Property Types</h2>
+      <div class="box">
+        <ul>
+          <li>Senior housing development</li>
+          <li>Industrial</li>
+          <li>Adaptive redevelopment</li>
+          <li>Hotels</li>
+          <li>Single-family construction</li>
+          <li>Distressed/opportunistic</li>
+          <li>Self-storage</li>
+          <li>Multifamily construction</li>
+          <li>Mortgage lending</li>
+        </ul>
+      </div>
     </div>
   </div>
-  
+
+  <h2>Taxation for LP/LLC Investors</h2>
+  <p>LP/LLC investors receive pass-through benefits of depreciation. In construction or redevelopment programs, accelerated depreciation of new fixtures and equipment may provide greater up-front tax benefits.</p>
+  <p>Investors are considered partners for IRS purposes and therefore receive K-1 forms rather than 1099 tax forms.</p>
+
+  <div class="disclaimer">
+    This is for informational purposes only and does not constitute an offer to purchase or sell securitized real estate investments. Risks include illiquidity, general market volatility, financing, interest rate sensitivity, and loss of principal. Consult the sponsor's PPM for full risk disclosures.
+  </div>
+  <div class="disclaimer" style="border-left: none;">
+    <p><strong>1031 Capital Solutions</strong><br>
+    Securities offered through Concorde Investment Services, LLC (CIS), member FINRA/SIPC. Advisory services through Concorde Asset Management, LLC (CAM), an SEC-registered investment adviser. 1031 Capital Solutions is independent of CIS and CAM.</p>
+  </div>
+</div>
